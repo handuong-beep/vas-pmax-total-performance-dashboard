@@ -405,15 +405,64 @@ table.mtable{width:100%;border-collapse:collapse;background:var(--white);border-
   <div class="hdr-main">
     <h1>VAS × PMAX | Master Dashboard FY26</h1>
     <p>Vietnam Australia International School — Enrollment Campaign SY2026-2027</p>
-    <p style="margin-top:5px;font-size:10.5px;opacity:.6;">Compiled: 20 Apr 2026 · Owner: Hân Dương (Account, PMAX)</p>
+    <p style="margin-top:8px;font-size:11px;opacity:.9;line-height:1.7;max-width:700px;background:rgba(255,255,255,.1);border-radius:8px;padding:8px 12px;">
+      📌 <strong style="opacity:1;">Command center cho team PMAX</strong> —
+      ① Catch-up workstream status trong 5 phút ·
+      ② Onboard thành viên mới trong 10 phút ·
+      ③ Budget control theo kênh/tháng ·
+      ④ Prep client meeting không cần mở file khác ·
+      ⑤ Data SOP: định nghĩa chuẩn NE, QL, CR%
+    </p>
+    <p style="margin-top:5px;font-size:10.5px;opacity:.6;">Compiled: 20 Apr 2026 · Owner: Hân Dương (Account, PMAX) · 🔒 Internal use only</p>
   </div>
   <div class="hdr-chips">
     <div class="hdr-chip"><div class="n">FY26</div><div class="l">School Year 26–27</div></div>
     <div class="hdr-chip"><div class="n">~25B</div><div class="l">PMAX Revenue VND</div></div>
     <div class="hdr-chip"><div class="n">9B</div><div class="l">GP Target</div></div>
     <div class="hdr-chip"><div class="n">W16</div><div class="l">13–19 Apr 2026</div></div>
+    <div class="hdr-chip" onclick="document.getElementById('modal-how-to-use').style.display='flex'" style="cursor:pointer;background:rgba(255,255,255,.22);border:1.5px solid rgba(255,255,255,.45);">
+      <div class="n" style="font-size:17px;">📖</div>
+      <div class="l">How to Use</div>
+    </div>
   </div>
 </header>
+
+<!-- ── HOW TO USE MODAL ── -->
+<div id="modal-how-to-use" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:9999;align-items:center;justify-content:center;" onclick="if(event.target===this)this.style.display='none'">
+  <div style="background:#fff;border-radius:16px;padding:32px;max-width:560px;width:92%;position:relative;box-shadow:0 24px 64px rgba(0,0,0,.3);max-height:90vh;overflow-y:auto;">
+    <button onclick="document.getElementById('modal-how-to-use').style.display='none'" style="position:absolute;top:14px;right:16px;background:none;border:none;font-size:20px;cursor:pointer;color:#9EA3AF;line-height:1;">✕</button>
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:22px;">
+      <div style="width:42px;height:42px;background:#B11116;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;">📊</div>
+      <div>
+        <div style="font-size:16px;font-weight:800;color:#1A1A2E;">Hướng dẫn sử dụng Dashboard</div>
+        <div style="font-size:11px;color:#9EA3AF;margin-top:2px;">VAS × PMAX Master Dashboard FY26 — 🔒 Internal PMAX only</div>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:10px;">
+      <div style="background:#FFF0F0;border-left:4px solid #B11116;border-radius:8px;padding:12px 16px;">
+        <div style="font-size:12px;font-weight:700;color:#B11116;margin-bottom:4px;">① Catch-up nhanh — 5 phút</div>
+        <div style="font-size:12px;color:#4A4B5E;line-height:1.5;">Xem toàn bộ workstream status, task owner, timeline trong 5 phút. Không cần đọc lại cả thread chat.<br><span style="color:#9EA3AF;">→ Tab <strong>Master Workplan</strong> · Tab <strong>Weekly Workstreams</strong></span></div>
+      </div>
+      <div style="background:#F0F4FF;border-left:4px solid #2A4574;border-radius:8px;padding:12px 16px;">
+        <div style="font-size:12px;font-weight:700;color:#2A4574;margin-bottom:4px;">② Onboard thành viên mới — 10 phút</div>
+        <div style="font-size:12px;color:#4A4B5E;line-height:1.5;">Foundation system đủ để bất kỳ ai hiểu campaign VAS: objectives, RACI, key contacts, cách team vận hành.<br><span style="color:#9EA3AF;">→ Tab <strong>Project Information</strong></span></div>
+      </div>
+      <div style="background:#F0FFF4;border-left:4px solid #16A34A;border-radius:8px;padding:12px 16px;">
+        <div style="font-size:12px;font-weight:700;color:#16A34A;margin-bottom:4px;">③ Budget control</div>
+        <div style="font-size:12px;color:#4A4B5E;line-height:1.5;">Reconcile budget thực tế vs. kế hoạch theo từng kênh, từng tháng. Tự trả lời được "còn bao nhiêu để chi?" trước khi hỏi.<br><span style="color:#9EA3AF;">→ Tab <strong>Budget System</strong></span></div>
+      </div>
+      <div style="background:#FFFBF0;border-left:4px solid #D97706;border-radius:8px;padding:12px 16px;">
+        <div style="font-size:12px;font-weight:700;color:#D97706;margin-bottom:4px;">④ Prep cho client meeting</div>
+        <div style="font-size:12px;color:#4A4B5E;line-height:1.5;">Big picture + performance snapshot đủ để vào họp VAS mà không cần mở thêm file nào.<br><span style="color:#9EA3AF;">→ Tab <strong>Weekly Workstreams</strong> trước mỗi cuộc họp</span></div>
+      </div>
+      <div style="background:#F5F0FF;border-left:4px solid #7C3AED;border-radius:8px;padding:12px 16px;">
+        <div style="font-size:12px;font-weight:700;color:#7C3AED;margin-bottom:4px;">⑤ Data SOP</div>
+        <div style="font-size:12px;color:#4A4B5E;line-height:1.5;">Định nghĩa chuẩn cho NE, QL, CR%, các chỉ số funnel. Team nói cùng 1 ngôn ngữ số, không tranh luận định nghĩa.<br><span style="color:#9EA3AF;">→ Tab <strong>Data SOP</strong></span></div>
+      </div>
+    </div>
+    <div style="margin-top:16px;padding-top:14px;border-top:1px solid #E2E5EA;text-align:center;font-size:11px;color:#9EA3AF;">🔒 Dashboard nội bộ — không chia sẻ với bên ngoài PMAX</div>
+  </div>
+</div>
 
 <div class="page">
 
@@ -3335,9 +3384,7 @@ document.addEventListener('DOMContentLoaded', renderWorkplanTable);
       <!-- B1: Brand Strategy -->
       <div style="background:#fff;padding:11px 13px;">
         <div style="font-size:11.5px;font-weight:800;color:#2A4574;margin-bottom:7px;">Brand Strategy</div>
-        <div style="background:#F0F2F8;border-radius:5px;padding:6px 10px;margin-bottom:4px;font-size:11px;color:#1A1A2E;">Brand architecture &amp; identity</div>
-        <div style="background:#F0F2F8;border-radius:5px;padding:6px 10px;margin-bottom:4px;font-size:11px;color:#1A1A2E;">Brand story &amp; comm. platform</div>
-        <div style="background:#F0F2F8;border-radius:5px;padding:6px 10px;font-size:11px;color:#1A1A2E;">Brand positioning direction</div>
+        <div style="background:#F0F2F8;border-radius:5px;padding:6px 10px;font-size:11px;color:#1A1A2E;">Brand story &amp; comm. platform</div>
       </div>
 
       <!-- B2: Integrated Campaign Planning -->
@@ -3351,9 +3398,7 @@ document.addEventListener('DOMContentLoaded', renderWorkplanTable);
       <!-- B3: Brand Audit -->
       <div style="background:#fff;padding:11px 13px;">
         <div style="font-size:11.5px;font-weight:800;color:#2A4574;margin-bottom:7px;">Brand Audit in Business Alignment</div>
-        <div style="background:#F0F2F8;border-radius:5px;padding:6px 10px;margin-bottom:4px;font-size:11px;color:#1A1A2E;">Brand health assessment (BLS)</div>
-        <div style="background:#F0F2F8;border-radius:5px;padding:6px 10px;margin-bottom:4px;font-size:11px;color:#1A1A2E;">Brand vs. business alignment check</div>
-        <div style="background:#F0F2F8;border-radius:5px;padding:6px 10px;font-size:11px;color:#1A1A2E;">Periodic brand recall tracking</div>
+        <div style="background:#F0F2F8;border-radius:5px;padding:6px 10px;font-size:11px;color:#1A1A2E;">Brand Lift Survey (BLS)</div>
       </div>
 
       <!-- B4: Media Branding Strategy -->
@@ -3361,7 +3406,7 @@ document.addEventListener('DOMContentLoaded', renderWorkplanTable);
         <div style="font-size:11.5px;font-weight:800;color:#2A4574;margin-bottom:7px;">Media Branding Strategy &amp; Content Planning</div>
         <div style="background:#F0F2F8;border-radius:5px;padding:6px 10px;margin-bottom:4px;font-size:11px;color:#1A1A2E;">Media branding channel mix</div>
         <div style="background:#F0F2F8;border-radius:5px;padding:6px 10px;margin-bottom:4px;font-size:11px;color:#1A1A2E;">Content pillar &amp; calendar planning</div>
-        <div style="background:#F0F2F8;border-radius:5px;padding:6px 10px;font-size:11px;color:#1A1A2E;">Brand voice &amp; visual guidelines</div>
+        <div style="background:#F0F2F8;border-radius:5px;padding:6px 10px;font-size:11px;color:#1A1A2E;">Social Guidelines</div>
       </div>
     </div>
   </div>
@@ -3399,7 +3444,8 @@ document.addEventListener('DOMContentLoaded', renderWorkplanTable);
           <div style="background:#F0F2F8;border-radius:5px;padding:6px 10px;margin-bottom:4px;font-size:11.5px;color:#1A1A2E;display:flex;justify-content:space-between;align-items:center;"><span>Concept (iTVC + KV tĩnh + KV động)</span><span style="font-size:11px;font-weight:700;color:#1A2570;">1.14B</span></div>
           <div style="background:#F0F2F8;border-radius:5px;padding:6px 10px;margin-bottom:4px;font-size:11.5px;color:#1A1A2E;display:flex;justify-content:space-between;align-items:center;"><span>Ads Creative (posts, GIF, video)</span><span style="font-size:11px;font-weight:700;color:#1A2570;">1.96B</span></div>
           <div style="background:#F0F2F8;border-radius:5px;padding:6px 10px;margin-bottom:4px;font-size:11.5px;color:#1A1A2E;">Landing Page art direction</div>
-          <div style="background:#F0F2F8;border-radius:5px;padding:6px 10px;font-size:11.5px;color:#1A1A2E;">Social content posts (200/năm)</div>
+          <div style="background:#F0F2F8;border-radius:5px;padding:6px 10px;margin-bottom:4px;font-size:11.5px;color:#1A1A2E;">Social content posts (200/năm)</div>
+          <div style="background:#FEF0F0;border-radius:5px;padding:6px 10px;font-size:11.5px;color:#C41E24;font-weight:600;display:flex;justify-content:space-between;align-items:center;"><span>🎯 CFP (Creative for Performance)</span><span style="font-size:11px;">ongoing</span></div>
         </div>
       </div>
 
@@ -3410,7 +3456,6 @@ document.addEventListener('DOMContentLoaded', renderWorkplanTable);
           <div style="font-size:10.5px;color:rgba(255,255,255,.85);margin-top:3px;">Owned + Earned Media</div>
         </div>
         <div style="padding:10px 12px 12px;">
-          <div style="background:#F0F2F8;border-radius:5px;padding:6px 10px;margin-bottom:4px;font-size:11.5px;color:#1A1A2E;display:flex;justify-content:space-between;align-items:center;"><span>Social Management (5 platforms)</span><span style="font-size:11px;font-weight:700;color:#1A2570;">300M</span></div>
           <div style="background:#F0F2F8;border-radius:5px;padding:6px 10px;margin-bottom:4px;font-size:11.5px;color:#1A1A2E;">MCN Livestream (monthly Lead Gen)</div>
           <div style="background:#F0F2F8;border-radius:5px;padding:6px 10px;margin-bottom:4px;font-size:11.5px;color:#1A1A2E;">MCN Influencer &amp; KOL booking</div>
           <div style="background:#F0F2F8;border-radius:5px;padding:6px 10px;font-size:11.5px;color:#1A1A2E;">TikTok channel building (SY26-27)</div>
@@ -3424,8 +3469,9 @@ document.addEventListener('DOMContentLoaded', renderWorkplanTable);
           <div style="font-size:10.5px;color:rgba(255,255,255,.85);margin-top:3px;">Mid-Lower Funnel</div>
         </div>
         <div style="padding:10px 12px 12px;">
-          <div style="background:#F0F2F8;border-radius:5px;padding:6px 10px;margin-bottom:4px;font-size:11.5px;color:#1A1A2E;display:flex;justify-content:space-between;align-items:center;"><span>Call Center (Pre.Lead → QL)</span><span style="font-size:11px;font-weight:700;color:#1A2570;">528M</span></div>
+          <div style="background:#F0F2F8;border-radius:5px;padding:6px 10px;margin-bottom:4px;font-size:11.5px;color:#1A1A2E;display:flex;justify-content:space-between;align-items:center;"><span>Call Center (Lead → Pre.Lead)</span><span style="font-size:11px;font-weight:700;color:#1A2570;">528M</span></div>
           <div style="background:#F0F2F8;border-radius:5px;padding:6px 10px;margin-bottom:4px;font-size:11.5px;color:#1A1A2E;">ZNS/SMS automation &amp; nurturing</div>
+          <div style="background:#F0F2F8;border-radius:5px;padding:6px 10px;margin-bottom:4px;font-size:11.5px;color:#1A1A2E;display:flex;justify-content:space-between;align-items:center;"><span>Social Management (5 platforms)</span><span style="font-size:11px;font-weight:700;color:#1A2570;">300M</span></div>
           <div style="background:#F0F2F8;border-radius:5px;padding:6px 10px;margin-bottom:4px;font-size:11.5px;color:#1A1A2E;">Lead Scoring &amp; Segmentation</div>
           <div style="background:#F0F2F8;border-radius:5px;padding:6px 10px;font-size:11.5px;color:#1A1A2E;display:flex;justify-content:space-between;align-items:center;"><span>Planning &amp; Reporting (12 tháng)</span><span style="font-size:11px;font-weight:700;color:#1A2570;">576M</span></div>
         </div>
@@ -3545,6 +3591,76 @@ document.addEventListener('DOMContentLoaded', renderWorkplanTable);
       <tr><td><strong>Lưu Thuỳ Linh</strong></td><td>Creative Manager</td><td><span class="role-badge rb-inf">Influencer</span></td><td>linh.luu@vas.edu.vn</td><td>QC visual/video — lấy feedback cùng chị Vy cho scope lớn</td></tr>
       <tr><td><strong>Lê Thanh Hùng</strong></td><td>Event Manager</td><td><span class="role-badge rb-inf">Influencer</span></td><td>hung.le@vas.edu.vn</td><td>Book cơ sở, shoot/livestream tại campus</td></tr>
       <tr><td style="font-size:11.5px;color:#9EA3AF;" colspan="5">PMAX side: Hân Dương (Sr. Account) · Hạnh Phó (Assoc.) · Thanh Huỳnh (Client Solution) · Kiệt Ngô / Khanh Lê (Media) · Loan Trần (Creative) · Châu Đoàn / Thảo Nguyễn (Strategy) · MCN: Mita, Hảo Trương</td></tr>
+    </tbody>
+  </table>
+
+  <!-- C. SERVING TEAM MAPPING -->
+  <div class="sec" style="margin-top:20px;"><h2>🔗 C. Serving Team Mapping</h2><div class="line"></div><div class="pill">PMAX ↔ VAS</div></div>
+  <div style="font-size:11px;color:#9EA3AF;margin-bottom:10px;">Mapping 1-1 giữa từng thành viên PMAX và đầu mối VAS tương ứng — để clear ownership trong daily execution</div>
+  <table style="width:100%;border-collapse:collapse;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.06);font-size:12px;">
+    <thead>
+      <tr style="background:#2A4574;color:#fff;">
+        <th style="padding:10px 14px;text-align:left;font-weight:700;">PMAX Member</th>
+        <th style="padding:10px 14px;text-align:left;font-weight:700;">Role</th>
+        <th style="padding:10px 14px;text-align:left;font-weight:700;">VAS Counterpart</th>
+        <th style="padding:10px 14px;text-align:left;font-weight:700;">Responsibilities</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="border-bottom:1px solid #E2E5EA;">
+        <td style="padding:10px 14px;font-weight:700;color:#B11116;">Trung Trần</td>
+        <td style="padding:10px 14px;color:#4A4B5E;">Business Partner</td>
+        <td style="padding:10px 14px;"><span style="background:#FFF0F0;color:#B11116;border-radius:5px;padding:2px 8px;font-size:11px;font-weight:600;">Ms. Liên Hương</span></td>
+        <td style="padding:10px 14px;color:#4A4B5E;font-size:11.5px;">Catch-up 1:1 · Company Gift · Lunch · Business &amp; Innovation advisory</td>
+      </tr>
+      <tr style="border-bottom:1px solid #E2E5EA;background:#FAFAFA;">
+        <td style="padding:10px 14px;font-weight:700;color:#2A4574;">Thanh Huỳnh</td>
+        <td style="padding:10px 14px;color:#4A4B5E;">Client Solution</td>
+        <td style="padding:10px 14px;"><span style="background:#F0F4FF;color:#2A4574;border-radius:5px;padding:2px 8px;font-size:11px;font-weight:600;">Ms. Thuỷ · Ms. Lưu</span></td>
+        <td style="padding:10px 14px;color:#4A4B5E;font-size:11.5px;">Functional outcomes · Control direction · Client Serving · Control PnL</td>
+      </tr>
+      <tr style="border-bottom:1px solid #E2E5EA;">
+        <td style="padding:10px 14px;font-weight:700;color:#B11116;">Hân Dương</td>
+        <td style="padding:10px 14px;color:#4A4B5E;">Assoc. Client Solution</td>
+        <td style="padding:10px 14px;"><span style="background:#FFF0F0;color:#B11116;border-radius:5px;padding:2px 8px;font-size:11px;font-weight:600;">Ms. Thuỷ · Ms. Lưu · Ms. An</span></td>
+        <td style="padding:10px 14px;color:#4A4B5E;font-size:11.5px;">Manage project · Reply client concern · Daily execution · Follow up CR &amp; Qualified Rate · Control PnL</td>
+      </tr>
+      <tr style="border-bottom:1px solid #E2E5EA;background:#FAFAFA;">
+        <td style="padding:10px 14px;font-weight:700;color:#2A4574;">Hạnh Phó</td>
+        <td style="padding:10px 14px;color:#4A4B5E;">Assoc. Client Solution</td>
+        <td style="padding:10px 14px;"><span style="background:#F0F4FF;color:#2A4574;border-radius:5px;padding:2px 8px;font-size:11px;font-weight:600;">Team Creative VAS · Ms. Thuỷ · Ms. Thu Hương</span></td>
+        <td style="padding:10px 14px;color:#4A4B5E;font-size:11.5px;">Control Creative Production</td>
+      </tr>
+      <tr style="border-bottom:1px solid #E2E5EA;">
+        <td style="padding:10px 14px;font-weight:700;color:#B11116;">Kiệt Ngô</td>
+        <td style="padding:10px 14px;color:#4A4B5E;">Operations Manager</td>
+        <td style="padding:10px 14px;"><span style="background:#FFF0F0;color:#B11116;border-radius:5px;padding:2px 8px;font-size:11px;font-weight:600;">Ms. Lưu</span></td>
+        <td style="padding:10px 14px;color:#4A4B5E;font-size:11.5px;">Performance management · Control Margin Media · Lead acquisition · Guide OE</td>
+      </tr>
+      <tr style="border-bottom:1px solid #E2E5EA;background:#FAFAFA;">
+        <td style="padding:10px 14px;font-weight:700;color:#2A4574;">Khanh Lê</td>
+        <td style="padding:10px 14px;color:#4A4B5E;">Operations Executive</td>
+        <td style="padding:10px 14px;"><span style="background:#F0F4FF;color:#2A4574;border-radius:5px;padding:2px 8px;font-size:11px;font-weight:600;">Ms. Lưu</span></td>
+        <td style="padding:10px 14px;color:#4A4B5E;font-size:11.5px;">Daily execution · Performance management · Data provide · Present weekly/monthly · Set up Air Ads</td>
+      </tr>
+      <tr style="border-bottom:1px solid #E2E5EA;">
+        <td style="padding:10px 14px;font-weight:700;color:#B11116;">Nga Đào</td>
+        <td style="padding:10px 14px;color:#4A4B5E;">Marketing Director (PMAX)</td>
+        <td style="padding:10px 14px;"><span style="background:#FFF0F0;color:#B11116;border-radius:5px;padding:2px 8px;font-size:11px;font-weight:600;">Ms. Liên Hương</span></td>
+        <td style="padding:10px 14px;color:#4A4B5E;font-size:11.5px;">Control Creative Production</td>
+      </tr>
+      <tr style="border-bottom:1px solid #E2E5EA;background:#FAFAFA;">
+        <td style="padding:10px 14px;font-weight:700;color:#2A4574;">Châu Đoàn</td>
+        <td style="padding:10px 14px;color:#4A4B5E;">Assoc. Strategy Director</td>
+        <td style="padding:10px 14px;"><span style="background:#F0F4FF;color:#2A4574;border-radius:5px;padding:2px 8px;font-size:11px;font-weight:600;">Ms. Liên Hương</span></td>
+        <td style="padding:10px 14px;color:#4A4B5E;font-size:11.5px;">Content Planning · Branding Strategy</td>
+      </tr>
+      <tr style="background:#FFF0F0;">
+        <td style="padding:10px 14px;font-weight:700;color:#B11116;">Loan Trần</td>
+        <td style="padding:10px 14px;color:#4A4B5E;">Creative Manager</td>
+        <td style="padding:10px 14px;"><span style="background:#FFF0F0;color:#B11116;border-radius:5px;padding:2px 8px;font-size:11px;font-weight:600;">Team Creative VAS · Ms. Thuỷ · Ms. Liên Hương</span></td>
+        <td style="padding:10px 14px;color:#4A4B5E;font-size:11.5px;">Control Creative Production · Content Planning full year</td>
+      </tr>
     </tbody>
   </table>
 
