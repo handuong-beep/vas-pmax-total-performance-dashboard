@@ -372,6 +372,25 @@ table.mtable{width:100%;border-collapse:collapse;background:var(--white);border-
   border-top:1px solid #E2E5EA;
 }
 
+
+/* ── BUDGET FILTER BAR ── */
+.budget-filter-bar{background:#fff;border-radius:12px;padding:14px 18px;box-shadow:0 2px 8px rgba(0,0,0,.07);margin-bottom:18px;display:flex;flex-wrap:wrap;gap:12px;align-items:flex-start;}
+.filter-group{display:flex;flex-direction:column;gap:5px;min-width:140px;}
+.filter-group label{font-size:10px;font-weight:700;color:#9EA3AF;text-transform:uppercase;letter-spacing:.5px;}
+.filter-chips{display:flex;flex-wrap:wrap;gap:4px;}
+.fchip{padding:4px 10px;border-radius:6px;border:1.5px solid #E2E5EA;font-size:11px;font-weight:600;cursor:pointer;color:#4A4B5E;background:#fff;transition:all .15s;}
+.fchip:hover{border-color:#B11116;color:#B11116;}
+.fchip.active{background:#B11116;border-color:#B11116;color:#fff;}
+.fchip.plan{border-color:#7C3AED;color:#7C3AED;}
+.fchip.plan.active{background:#7C3AED;border-color:#7C3AED;color:#fff;}
+.filter-active-bar{background:#FFF0F0;border:1px solid #FECACA;border-radius:8px;padding:7px 14px;font-size:11.5px;color:#B11116;display:none;margin-bottom:12px;align-items:center;gap:8px;}
+.filter-active-bar.show{display:flex;}
+.filter-reset{margin-left:auto;background:none;border:1px solid #B11116;color:#B11116;border-radius:5px;padding:2px 8px;font-size:11px;cursor:pointer;font-weight:600;}
+tr.filtered-hide{display:none;}
+.plan-row td:first-child::after{content:' 📋 Plan';font-size:9.5px;color:#7C3AED;font-weight:700;margin-left:4px;}
+.plan-row{background:#F9F5FF!important;}
+.week-note{font-size:10.5px;color:#9EA3AF;font-style:italic;margin-top:3px;}
+
 </style>
 </head>
 <body>
@@ -814,6 +833,68 @@ table.mtable{width:100%;border-collapse:collapse;background:var(--white);border-
   </div>
 </div>
 
+
+<!-- ── BUDGET FILTER BAR ── -->
+<div class="budget-filter-bar">
+  <div class="filter-group">
+    <label>Month</label>
+    <div class="filter-chips" id="fc-month">
+      <span class="fchip active" data-val="ALL" onclick="setFilter('month','ALL',this)">All</span>
+      <span class="fchip" data-val="2025-10" onclick="setFilter('month','2025-10',this)">Oct</span>
+      <span class="fchip" data-val="2025-11" onclick="setFilter('month','2025-11',this)">Nov</span>
+      <span class="fchip" data-val="2025-12" onclick="setFilter('month','2025-12',this)">Dec</span>
+      <span class="fchip" data-val="2026-01" onclick="setFilter('month','2026-01',this)">Jan</span>
+      <span class="fchip" data-val="2026-02" onclick="setFilter('month','2026-02',this)">Feb</span>
+      <span class="fchip" data-val="2026-03" onclick="setFilter('month','2026-03',this)">Mar</span>
+      <span class="fchip plan" data-val="2026-04" onclick="setFilter('month','2026-04',this)">Apr 📋</span>
+      <span class="fchip plan" data-val="2026-05" onclick="setFilter('month','2026-05',this)">May 📋</span>
+      <span class="fchip plan" data-val="2026-06" onclick="setFilter('month','2026-06',this)">Jun 📋</span>
+      <span class="fchip plan" data-val="2026-07" onclick="setFilter('month','2026-07',this)">Jul 📋</span>
+      <span class="fchip plan" data-val="2026-08" onclick="setFilter('month','2026-08',this)">Aug 📋</span>
+      <span class="fchip plan" data-val="2026-09" onclick="setFilter('month','2026-09',this)">Sep 📋</span>
+    </div>
+  </div>
+  <div class="filter-group">
+    <label>Quarter / Period</label>
+    <div class="filter-chips" id="fc-quarter">
+      <span class="fchip active" data-val="ALL" onclick="setFilter('quarter','ALL',this)">All</span>
+      <span class="fchip" data-val="Q4-25" onclick="setFilter('quarter','Q4-25',this)">Q4 '25 (Oct–Dec)</span>
+      <span class="fchip" data-val="Q1-26" onclick="setFilter('quarter','Q1-26',this)">Q1 '26 (Jan–Mar)</span>
+      <span class="fchip plan" data-val="Q2-26" onclick="setFilter('quarter','Q2-26',this)">Q2 '26 (Apr–Jun) 📋</span>
+      <span class="fchip plan" data-val="Q3-26" onclick="setFilter('quarter','Q3-26',this)">Q3 '26 (Jul–Sep) 📋</span>
+    </div>
+    <span class="week-note">📌 Week-level data chưa có — dùng Quarter để group theo period</span>
+  </div>
+  <div class="filter-group">
+    <label>Function</label>
+    <div class="filter-chips" id="fc-func">
+      <span class="fchip active" data-val="ALL" onclick="setFilter('func','ALL',this)">All</span>
+      <span class="fchip" data-val="MEDIA" onclick="setFilter('func','MEDIA',this)">Media</span>
+      <span class="fchip" data-val="CREATIVE" onclick="setFilter('func','CREATIVE',this)">Creative</span>
+      <span class="fchip" data-val="LIVESTREAM" onclick="setFilter('func','LIVESTREAM',this)">Livestream</span>
+      <span class="fchip" data-val="STG/CONSULTING" onclick="setFilter('func','STG/CONSULTING',this)">Strategy</span>
+      <span class="fchip" data-val="DATA_PRODUCT" onclick="setFilter('func','DATA_PRODUCT',this)">Data Product</span>
+    </div>
+  </div>
+  <div class="filter-group">
+    <label>Source</label>
+    <div class="filter-chips" id="fc-src">
+      <span class="fchip active" data-val="ALL" onclick="setFilter('src','ALL',this)">All</span>
+      <span class="fchip" data-val="Facebook" onclick="setFilter('src','Facebook',this)">Facebook</span>
+      <span class="fchip" data-val="Google" onclick="setFilter('src','Google',this)">Google</span>
+      <span class="fchip" data-val="TikTok" onclick="setFilter('src','TikTok',this)">TikTok</span>
+      <span class="fchip" data-val="Zalo" onclick="setFilter('src','Zalo',this)">Zalo</span>
+      <span class="fchip" data-val="Creative" onclick="setFilter('src','Creative',this)">Creative</span>
+      <span class="fchip" data-val="MCN" onclick="setFilter('src','MCN',this)">MCN</span>
+      <span class="fchip" data-val="Other" onclick="setFilter('src','Other',this)">Other</span>
+    </div>
+  </div>
+</div>
+<div class="filter-active-bar" id="filter-active-bar">
+  <span id="filter-label">🔍 Đang lọc: <strong id="filter-desc"></strong></span>
+  <button class="filter-reset" onclick="resetAllFilters()">✕ Reset</button>
+</div>
+
 <!-- ═══ SECTION 3: MONTHLY P&L + CHART ═══ -->
 <div class="sec"><h2>📈 Monthly P&L — Rev / Cost / GP1 / GP2 (Oct 2025 – Mar 2026)</h2><div class="line"></div></div>
 
@@ -898,20 +979,20 @@ table.mtable{width:100%;border-collapse:collapse;background:var(--white);border-
         <th>YoY GP2 <span style="font-size:9px;opacity:.7;">(FY25)</span></th>
       </tr>
     </thead>
-    <tbody>
-      <tr >
-        <td>Oct '25 </td>
+    <tbody id="monthly-tbody">
+      <tr class="" data-month="2025-10" data-quarter="Q4-25">
+        <td>Oct '25</td>
         <td>1,231,872,484</td>
         <td>820,680,432</td>
         <td class="cell-pos">411,192,052</td>
         <td class="cell-pos" style="font-weight:600;">432,333,332</td>
-        <td style="color:#D97706;font-weight:700;">35.1%</td>
+        <td style="color:#16A34A;font-weight:700;">35.1%</td>
         <td>268,037,435</td>
         <td style="color:#16A34A;font-weight:600;">+164,295,897 (+61.3%)</td>
         <td style="color:#16A34A;font-weight:600;">+68.7%</td>
       </tr>
-      <tr >
-        <td>Nov '25 </td>
+      <tr class="" data-month="2025-11" data-quarter="Q4-25">
+        <td>Nov '25</td>
         <td>2,300,343,674</td>
         <td>1,384,875,744</td>
         <td class="cell-pos">915,467,930</td>
@@ -921,8 +1002,8 @@ table.mtable{width:100%;border-collapse:collapse;background:var(--white);border-
         <td style="color:#16A34A;font-weight:600;">+78,828,659 (+9.1%)</td>
         <td style="color:#16A34A;font-weight:600;">+234.5%</td>
       </tr>
-      <tr >
-        <td>Dec '25 </td>
+      <tr class="" data-month="2025-12" data-quarter="Q4-25">
+        <td>Dec '25</td>
         <td>2,338,232,262</td>
         <td>1,497,897,571</td>
         <td class="cell-pos">840,334,691</td>
@@ -932,8 +1013,8 @@ table.mtable{width:100%;border-collapse:collapse;background:var(--white);border-
         <td style="color:#DC2626;font-weight:600;">-55,400,599 (-5.5%)</td>
         <td style="color:#16A34A;font-weight:600;">+14.2%</td>
       </tr>
-      <tr class="cell-warn">
-        <td>Jan '26 ⚠️ Jan dip</td>
+      <tr class="" data-month="2026-01" data-quarter="Q1-26">
+        <td>Jan '26</td>
         <td>1,819,286,810</td>
         <td>1,531,001,338</td>
         <td class="cell-pos">288,285,472</td>
@@ -943,8 +1024,8 @@ table.mtable{width:100%;border-collapse:collapse;background:var(--white);border-
         <td style="color:#DC2626;font-weight:600;">-214,116,414 (-38.0%)</td>
         <td style="color:#DC2626;font-weight:600;">-12.1%</td>
       </tr>
-      <tr >
-        <td>Feb '26 </td>
+      <tr class="" data-month="2026-02" data-quarter="Q1-26">
+        <td>Feb '26</td>
         <td>1,909,786,635</td>
         <td>1,135,779,556</td>
         <td class="cell-pos">774,007,079</td>
@@ -954,8 +1035,8 @@ table.mtable{width:100%;border-collapse:collapse;background:var(--white);border-
         <td style="color:#16A34A;font-weight:600;">+253,148,969 (+45.1%)</td>
         <td style="color:#DC2626;font-weight:600;">-14.6%</td>
       </tr>
-      <tr class="cell-good">
-        <td>Mar '26 🔝 Best month</td>
+      <tr class="" data-month="2026-03" data-quarter="Q1-26">
+        <td>Mar '26</td>
         <td>3,074,437,393</td>
         <td>1,901,104,705</td>
         <td class="cell-pos">1,173,332,688</td>
@@ -965,10 +1046,76 @@ table.mtable{width:100%;border-collapse:collapse;background:var(--white);border-
         <td style="color:#DC2626;font-weight:600;">-141,662,662 (-10.0%)</td>
         <td style="color:#DC2626;font-weight:600;">-20.0%</td>
       </tr>
+      <tr class="plan-row" data-month="2026-04" data-quarter="Q2-26" style="background:#F9F5FF;">
+        <td>Apr '26 <span style="font-size:9px;background:#EDE9FE;color:#7C3AED;border-radius:3px;padding:1px 5px;font-weight:700;">PLAN</span></td>
+        <td>3,306,617,482</td>
+        <td>2,239,471,273</td>
+        <td class="cell-pos">1,067,146,209</td>
+        <td class="cell-pos" style="font-weight:600;">1,067,146,209</td>
+        <td style="color:#D97706;font-weight:700;">32.3%</td>
+        <td>1,067,146,209</td>
+        <td style="color:#16A34A;font-weight:600;">+0 (+0.0%)</td>
+        <td style="color:#9EA3AF;">📋</td>
+      </tr>
+      <tr class="plan-row" data-month="2026-05" data-quarter="Q2-26" style="background:#F9F5FF;">
+        <td>May '26 <span style="font-size:9px;background:#EDE9FE;color:#7C3AED;border-radius:3px;padding:1px 5px;font-weight:700;">PLAN</span></td>
+        <td>3,330,051,527</td>
+        <td>2,628,651,527</td>
+        <td class="cell-pos">701,400,000</td>
+        <td class="cell-pos" style="font-weight:600;">701,400,000</td>
+        <td style="color:#DC2626;font-weight:700;">21.1%</td>
+        <td>701,400,000</td>
+        <td style="color:#16A34A;font-weight:600;">+0 (+0.0%)</td>
+        <td style="color:#9EA3AF;">📋</td>
+      </tr>
+      <tr class="plan-row" data-month="2026-06" data-quarter="Q2-26" style="background:#F9F5FF;">
+        <td>Jun '26 <span style="font-size:9px;background:#EDE9FE;color:#7C3AED;border-radius:3px;padding:1px 5px;font-weight:700;">PLAN</span></td>
+        <td>2,452,343,180</td>
+        <td>1,951,943,180</td>
+        <td class="cell-pos">500,400,000</td>
+        <td class="cell-pos" style="font-weight:600;">500,400,000</td>
+        <td style="color:#DC2626;font-weight:700;">20.4%</td>
+        <td>500,400,000</td>
+        <td style="color:#16A34A;font-weight:600;">+0 (+0.0%)</td>
+        <td style="color:#9EA3AF;">📋</td>
+      </tr>
+      <tr class="plan-row" data-month="2026-07" data-quarter="Q3-26" style="background:#F9F5FF;">
+        <td>Jul '26 <span style="font-size:9px;background:#EDE9FE;color:#7C3AED;border-radius:3px;padding:1px 5px;font-weight:700;">PLAN</span></td>
+        <td>1,661,509,626</td>
+        <td>1,202,209,626</td>
+        <td class="cell-pos">459,300,000</td>
+        <td class="cell-pos" style="font-weight:600;">459,300,000</td>
+        <td style="color:#D97706;font-weight:700;">27.6%</td>
+        <td>459,300,000</td>
+        <td style="color:#16A34A;font-weight:600;">+0 (+0.0%)</td>
+        <td style="color:#9EA3AF;">📋</td>
+      </tr>
+      <tr class="plan-row" data-month="2026-08" data-quarter="Q3-26" style="background:#F9F5FF;">
+        <td>Aug '26 <span style="font-size:9px;background:#EDE9FE;color:#7C3AED;border-radius:3px;padding:1px 5px;font-weight:700;">PLAN</span></td>
+        <td>921,121,200</td>
+        <td>507,921,200</td>
+        <td class="cell-pos">413,200,000</td>
+        <td class="cell-pos" style="font-weight:600;">413,200,000</td>
+        <td style="color:#16A34A;font-weight:700;">44.9%</td>
+        <td>413,200,000</td>
+        <td style="color:#16A34A;font-weight:600;">+0 (+0.0%)</td>
+        <td style="color:#9EA3AF;">📋</td>
+      </tr>
+      <tr class="plan-row" data-month="2026-09" data-quarter="Q3-26" style="background:#F9F5FF;">
+        <td>Sep '26 <span style="font-size:9px;background:#EDE9FE;color:#7C3AED;border-radius:3px;padding:1px 5px;font-weight:700;">PLAN</span></td>
+        <td>663,739,685</td>
+        <td>397,739,685</td>
+        <td class="cell-pos">266,000,000</td>
+        <td class="cell-pos" style="font-weight:600;">266,000,000</td>
+        <td style="color:#16A34A;font-weight:700;">40.1%</td>
+        <td>266,000,000</td>
+        <td style="color:#16A34A;font-weight:600;">+0 (+0.0%)</td>
+        <td style="color:#9EA3AF;">📋</td>
+      </tr>
     </tbody>
     <tfoot>
       <tr>
-        <td><strong>YTD H1 (6 tháng)</strong></td>
+        <td><strong id="table-footer-label">YTD H1 (6 tháng actual)</strong></td>
         <td><strong>12,673,959,258</strong></td>
         <td><strong>8,271,339,346</strong></td>
         <td class="cell-pos"><strong>4,402,619,912</strong></td>
@@ -1001,7 +1148,7 @@ table.mtable{width:100%;border-collapse:collapse;background:var(--white);border-
     </thead>
     <tbody>
       <tr>
-        <td><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#2563EB;margin-right:6px;"></span><strong>MEDIA</strong></td>
+        <td data-func="MEDIA"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#2563EB;margin-right:6px;"></span><strong>MEDIA</strong></td>
         <td>10,540,850,070</td>
         <td>7,039,261,169</td>
         <td class="cell-pos">3,501,588,901</td>
@@ -1016,7 +1163,7 @@ table.mtable{width:100%;border-collapse:collapse;background:var(--white);border-
           </div>
         </td>
       </tr>
-      <tr>
+      <tr data-func="CREATIVE">
         <td><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#C41E24;margin-right:6px;"></span><strong>CREATIVE</strong></td>
         <td>1,780,409,188</td>
         <td>1,182,970,333</td>
@@ -1032,7 +1179,7 @@ table.mtable{width:100%;border-collapse:collapse;background:var(--white);border-
           </div>
         </td>
       </tr>
-      <tr>
+      <tr data-func="LIVESTREAM">
         <td><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#E85C0D;margin-right:6px;"></span><strong>LIVESTREAM</strong></td>
         <td>102,700,000</td>
         <td>44,444,444</td>
@@ -1048,7 +1195,7 @@ table.mtable{width:100%;border-collapse:collapse;background:var(--white);border-
           </div>
         </td>
       </tr>
-      <tr>
+      <tr data-func="STG/CONSULTING">
         <td><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#7C3AED;margin-right:6px;"></span><strong>STG / CONSULTING</strong></td>
         <td>170,000,000</td>
         <td>0</td>
@@ -1064,7 +1211,7 @@ table.mtable{width:100%;border-collapse:collapse;background:var(--white);border-
           </div>
         </td>
       </tr>
-      <tr>
+      <tr data-func="DATA_PRODUCT">
         <td><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#16A34A;margin-right:6px;"></span><strong>DATA_PRODUCT</strong></td>
         <td>80,000,000</td>
         <td>0</td>
@@ -1080,7 +1227,7 @@ table.mtable{width:100%;border-collapse:collapse;background:var(--white);border-
           </div>
         </td>
       </tr>
-      <tr>
+      <tr data-func="CONCEPT">
         <td><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#9EA3AF;margin-right:6px;"></span><strong>CONCEPT</strong></td>
         <td>0</td>
         <td>4,661,400</td>
@@ -1111,6 +1258,95 @@ table.mtable{width:100%;border-collapse:collapse;background:var(--white);border-
       </tr>
     </tfoot>
   </table>
+</div>
+
+
+<!-- ═══ SECTION 4b: BY SOURCE ═══ -->
+<div class="sec" id="sec-source"><h2>📡 Phân tích theo Source / Channel — H1 Actual</h2><div class="line"></div><span class="pill">Oct'25 – Mar'26</span></div>
+<div class="mtable-wrap" id="source-table-wrap">
+  <table class="mtable">
+    <thead>
+      <tr>
+        <th style="text-align:left;">Source</th>
+        <th>Revenue (VND)</th>
+        <th>Cost (VND)</th>
+        <th>GP2 (VND)</th>
+        <th>GP2%</th>
+        <th>Rev Share</th>
+      </tr>
+    </thead>
+    <tbody id="source-tbody">
+      <tr data-src="Facebook">
+        <td><strong>Facebook</strong></td>
+        <td>3,959,000,000</td>
+        <td>2,728,000,000</td>
+        <td class="cell-pos" style="font-weight:600;">1,231,000,000</td>
+        <td style="color:#D97706;font-weight:700;">31.1%</td>
+        <td><div style="display:flex;align-items:center;gap:6px;"><div style="flex:1;background:#F0F2F5;border-radius:4px;height:6px;"><div style="background:#B11116;width:100.0%;height:6px;border-radius:4px;"></div></div><span style="font-size:11px;color:var(--ink2);white-space:nowrap;">48.6%</span></div></td>
+      </tr>
+      <tr data-src="Google">
+        <td><strong>Google</strong></td>
+        <td>1,120,000,000</td>
+        <td>377,000,000</td>
+        <td class="cell-pos" style="font-weight:600;">743,000,000</td>
+        <td style="color:#16A34A;font-weight:700;">66.3%</td>
+        <td><div style="display:flex;align-items:center;gap:6px;"><div style="flex:1;background:#F0F2F5;border-radius:4px;height:6px;"><div style="background:#2563EB;width:41.3%;height:6px;border-radius:4px;"></div></div><span style="font-size:11px;color:var(--ink2);white-space:nowrap;">13.8%</span></div></td>
+      </tr>
+      <tr data-src="Zalo">
+        <td><strong>Zalo</strong></td>
+        <td>465,000,000</td>
+        <td>274,000,000</td>
+        <td class="cell-pos" style="font-weight:600;">191,000,000</td>
+        <td style="color:#16A34A;font-weight:700;">41.1%</td>
+        <td><div style="display:flex;align-items:center;gap:6px;"><div style="flex:1;background:#F0F2F5;border-radius:4px;height:6px;"><div style="background:#0055A5;width:17.1%;height:6px;border-radius:4px;"></div></div><span style="font-size:11px;color:var(--ink2);white-space:nowrap;">5.7%</span></div></td>
+      </tr>
+      <tr data-src="TikTok">
+        <td><strong>TikTok</strong></td>
+        <td>99,000,000</td>
+        <td>71,000,000</td>
+        <td class="cell-pos" style="font-weight:600;">28,000,000</td>
+        <td style="color:#D97706;font-weight:700;">28.3%</td>
+        <td><div style="display:flex;align-items:center;gap:6px;"><div style="flex:1;background:#F0F2F5;border-radius:4px;height:6px;"><div style="background:#00B3C8;width:3.6%;height:6px;border-radius:4px;"></div></div><span style="font-size:11px;color:var(--ink2);white-space:nowrap;">1.2%</span></div></td>
+      </tr>
+      <tr data-src="Creative">
+        <td><strong>Creative</strong></td>
+        <td>450,000,000</td>
+        <td>80,000,000</td>
+        <td class="cell-pos" style="font-weight:600;">370,000,000</td>
+        <td style="color:#16A34A;font-weight:700;">82.2%</td>
+        <td><div style="display:flex;align-items:center;gap:6px;"><div style="flex:1;background:#F0F2F5;border-radius:4px;height:6px;"><div style="background:#C41E24;width:16.6%;height:6px;border-radius:4px;"></div></div><span style="font-size:11px;color:var(--ink2);white-space:nowrap;">5.5%</span></div></td>
+      </tr>
+      <tr data-src="MCN">
+        <td><strong>MCN</strong></td>
+        <td>20,000,000</td>
+        <td>27,000,000</td>
+        <td class="cell-neg" style="font-weight:600;">-7,000,000</td>
+        <td style="color:#DC2626;font-weight:700;">-35.0%</td>
+        <td><div style="display:flex;align-items:center;gap:6px;"><div style="flex:1;background:#F0F2F5;border-radius:4px;height:6px;"><div style="background:#C41E24;width:0.7%;height:6px;border-radius:4px;"></div></div><span style="font-size:11px;color:var(--ink2);white-space:nowrap;">0.2%</span></div></td>
+      </tr>
+      <tr data-src="Other">
+        <td><strong>Other</strong></td>
+        <td>2,026,000,000</td>
+        <td>1,692,000,000</td>
+        <td class="cell-pos" style="font-weight:600;">334,000,000</td>
+        <td style="color:#D97706;font-weight:700;">16.5%</td>
+        <td><div style="display:flex;align-items:center;gap:6px;"><div style="flex:1;background:#F0F2F5;border-radius:4px;height:6px;"><div style="background:#C41E24;width:74.7%;height:6px;border-radius:4px;"></div></div><span style="font-size:11px;color:var(--ink2);white-space:nowrap;">24.9%</span></div></td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td><strong>TOTAL</strong></td>
+        <td><strong>8,139,000,000</strong></td>
+        <td><strong>5,249,000,000</strong></td>
+        <td class="cell-pos" style="font-weight:700;">2,890,000,000</td>
+        <td style="color:#7C3AED;font-weight:700;">35.5%</td>
+        <td style="font-weight:700;">100%</td>
+      </tr>
+    </tfoot>
+  </table>
+</div>
+<div style="background:#EFF6FF;border-left:4px solid #2563EB;border-radius:8px;padding:10px 16px;margin-bottom:20px;font-size:12px;color:#1E40AF;">
+  💡 <strong>Source note:</strong> Data từ Paxy Report H1 actual (CEVAS008). Source = kênh chi tiêu chính. "Other" bao gồm: AdBroadcast, booking, planning, vendor trực tiếp. FB chiếm 48.6% rev nhưng GP2 rate chỉ 31.1% vs GG 66.4%.
 </div>
 
 <!-- ═══ SECTION 5: BY SOLUTION ═══ -->
@@ -4281,5 +4517,92 @@ function switchTab(id, btn) {
   window.scrollTo({top: 0, behavior: 'smooth'});
 }
 </script>
+
+<script>
+// ── BUDGET FILTER ENGINE ──────────────────────────────────────
+var budgetFilters = {month:'ALL', quarter:'ALL', func:'ALL', src:'ALL'};
+
+function setFilter(type, val, el) {
+  // Deactivate siblings
+  var parent = el.parentElement;
+  parent.querySelectorAll('.fchip').forEach(function(c){c.classList.remove('active');});
+  el.classList.add('active');
+  
+  // Sync month ↔ quarter (mutually exclusive)
+  if (type === 'month' && val !== 'ALL') {
+    budgetFilters.quarter = 'ALL';
+    document.querySelectorAll('#fc-quarter .fchip').forEach(function(c){c.classList.remove('active');});
+    document.querySelector('#fc-quarter .fchip[data-val="ALL"]').classList.add('active');
+  }
+  if (type === 'quarter' && val !== 'ALL') {
+    budgetFilters.month = 'ALL';
+    document.querySelectorAll('#fc-month .fchip').forEach(function(c){c.classList.remove('active');});
+    document.querySelector('#fc-month .fchip[data-val="ALL"]').classList.add('active');
+  }
+  
+  budgetFilters[type] = val;
+  applyFilters();
+}
+
+function applyFilters() {
+  var f = budgetFilters;
+  var activeLabels = [];
+  
+  // Monthly P&L table
+  var rows = document.querySelectorAll('#monthly-tbody tr');
+  rows.forEach(function(row) {
+    var mo = row.getAttribute('data-month');
+    var q  = row.getAttribute('data-quarter');
+    var showMo = (f.month === 'ALL' || f.month === mo);
+    var showQ  = (f.quarter === 'ALL' || f.quarter === q);
+    row.classList.toggle('filtered-hide', !(showMo && showQ));
+  });
+  
+  // Function table
+  var funcRows = document.querySelectorAll('[data-func]');
+  funcRows.forEach(function(row) {
+    var fn = row.getAttribute('data-func');
+    row.classList.toggle('filtered-hide', f.func !== 'ALL' && f.func !== fn);
+  });
+  
+  // Source table
+  var srcRows = document.querySelectorAll('#source-tbody tr[data-src]');
+  srcRows.forEach(function(row) {
+    var s = row.getAttribute('data-src');
+    row.classList.toggle('filtered-hide', f.src !== 'ALL' && f.src !== s);
+  });
+  
+  // Active filter bar
+  var labels = [];
+  if (f.month !== 'ALL') labels.push('Tháng: ' + f.month);
+  if (f.quarter !== 'ALL') labels.push('Quý: ' + f.quarter);
+  if (f.func !== 'ALL') labels.push('Function: ' + f.func);
+  if (f.src !== 'ALL') labels.push('Source: ' + f.src);
+  
+  var bar = document.getElementById('filter-active-bar');
+  if (labels.length) {
+    bar.classList.add('show');
+    document.getElementById('filter-desc').textContent = labels.join(' · ');
+  } else {
+    bar.classList.remove('show');
+  }
+  
+  // Update footer label
+  var fl = document.getElementById('table-footer-label');
+  if (fl) {
+    if (f.month !== 'ALL') fl.textContent = 'Tháng: ' + f.month;
+    else if (f.quarter !== 'ALL') fl.textContent = 'Period: ' + f.quarter;
+    else fl.textContent = 'YTD H1 (6 tháng actual)';
+  }
+}
+
+function resetAllFilters() {
+  budgetFilters = {month:'ALL', quarter:'ALL', func:'ALL', src:'ALL'};
+  document.querySelectorAll('.fchip').forEach(function(c){c.classList.remove('active');});
+  document.querySelectorAll('.fchip[data-val="ALL"]').forEach(function(c){c.classList.add('active');});
+  applyFilters();
+}
+</script>
+
 </body>
 </html>
