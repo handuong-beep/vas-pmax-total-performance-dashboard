@@ -5221,30 +5221,6 @@ netlify deploy --prod --dir .
 </div><!-- /page -->
 
 <script>
-// ── PASSWORD GATE ──
-(function() {
-  if (sessionStorage.getItem('vas_auth') === '1') {
-    document.addEventListener('DOMContentLoaded', function() {
-      var g = document.getElementById('pw-gate');
-      if (g) g.style.display = 'none';
-    });
-  }
-})();
-
-function checkPw() {
-  var v = document.getElementById('pw-input').value;
-  var err = document.getElementById('pw-err');
-  if (v === '8KR2026@') {
-    sessionStorage.setItem('vas_auth', '1');
-    document.getElementById('pw-gate').style.display = 'none';
-  } else {
-    err.textContent = '⚠️ Mật khẩu không đúng. Vui lòng thử lại.';
-    document.getElementById('pw-input').value = '';
-    document.getElementById('pw-input').focus();
-    setTimeout(function(){ err.textContent = ''; }, 3000);
-  }
-}
-
 // ── TAB SWITCHER ──
 function switchTab(id, btn) {
   if (id === 'workplan') { setTimeout(renderWorkplanTable, 50); }
