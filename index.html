@@ -405,6 +405,8 @@ tr.filtered-hide{display:none;}
   </div>
   <div class="hdr-chips">
     <div class="hdr-chip"><div class="n">FY26</div><div class="l">School Year 26–27</div></div>
+    <div class="hdr-chip"><div class="n">~25B</div><div class="l">PMAX Revenue VND</div></div>
+    <div class="hdr-chip"><div class="n">9B</div><div class="l">GP Target</div></div>
     <div class="hdr-chip"><div class="n">W16</div><div class="l">13–19 Apr 2026</div></div>
     <div class="hdr-chip" onclick="document.getElementById('modal-how-to-use').style.display='flex'" style="cursor:pointer;background:rgba(255,255,255,.22);border:1.5px solid rgba(255,255,255,.45);">
       <div class="n" style="font-size:17px;">📖</div>
@@ -457,8 +459,7 @@ tr.filtered-hide{display:none;}
   <button class="tab-btn active" onclick="switchTab('foundation',this)">&#x1F3DB; Project Information</button>
   <button class="tab-btn" onclick="switchTab('workplan',this)">&#x1F5D3; Master Workplan &#x2014; 5 WS</button>
   <button class="tab-btn" onclick="switchTab('bigpic',this)">&#x1F4CA; Weekly Workstreams</button>
-  <button class="tab-btn" onclick="switchTab('budget',this)" style="display:none;">&#x1F4B0; Budget System &#x2014; Rev / Cost / GP</button>
-  <button class="tab-btn" onclick="switchTab('budget-team',this)">💼 Budget (Team View)</button>
+  <button class="tab-btn" onclick="switchTab('budget',this)">&#x1F4B0; Budget System &#x2014; Rev / Cost / GP</button>
 </div>
 <div class="tab-nav-meta">
   <button class="tab-btn-meta" onclick="switchTab('datasources',this)">&#x1F4CA; Data Sources &amp; Metrics</button>
@@ -775,7 +776,7 @@ tr.filtered-hide{display:none;}
 <div style="margin-top:40px;text-align:center;font-size:11px;color:#9EA3AF;padding-bottom:16px;">VAS × PMAX FY2026-2027 · Compiled 20/04/2026 · Owner: Hân Dương (Account, PMAX)</div>
 </div><!-- /tab-bigpic -->
 
-<div id="tab-budget" class="tab-panel" style="display:none!important;">
+<div id="tab-budget" class="tab-panel">
 
 <div class="src-note">
   📋 <strong>Nguồn dữ liệu:</strong> Tab "04_03_04 Data Paxy Report" — 8S Working File · Campaign FY26: <strong>CEVAS008</strong> · Campaign FY25 (YoY): <strong>CEVAS005</strong> · Coverage: Oct 2025 → Mar 2026 (6T actual). Apr–Sep 2026 = projection theo GP Plan. <strong>GP1 = Revenue – Cost (trước back margin) | GP2 = GP1 + Back Margin từ platforms</strong>
@@ -1536,766 +1537,6 @@ tr.filtered-hide{display:none;}
 <div style="margin-top:40px;text-align:center;font-size:11px;color:#9EA3AF;padding-bottom:16px;">VAS × PMAX FY2026-2027 · Compiled 20/04/2026 · Owner: Hân Dương (Account, PMAX)</div>
 </div><!-- /tab-budget -->
 
-<div id="tab-budget-team" class="tab-panel">
-
-<div class="src-note">
-  📋 <strong>💼 Team Budget View</strong> — Số liệu tham khảo nội bộ team Account. Đơn vị và tỷ lệ đã được điều chỉnh. Không dùng cho báo cáo P&amp;L — 8S Working File · Campaign FY26: <strong>CEVAS008</strong> · Campaign FY25 (YoY): <strong>CEVAS005</strong> · Coverage: Oct 2025 → Mar 2026 (6T actual). Apr–Sep 2026 = projection theo GP Plan. <strong>GP1 = Revenue – Cost (trước back margin) | GP2 = GP1 + Back Margin từ platforms</strong>
-</div>
-
-<!-- ═══ SECTION 1: YTD KPI CARDS ═══ -->
-<div class="sec"><h2>📊 Summary KPIs — YTD Oct 2025 – Mar 2026</h2><div class="line"></div><span class="pill">6 / 12 tháng · CEVAS008</span></div>
-<div class="kpi-row-6">
-  <div class="kpi-card rev"><div class="num">8.87B</div><div class="lbl">Revenue YTD</div><div class="sub">12,673,959,258 VND</div><div class="vs" style="color:#2563EB;">+15.0% vs FY25 same period</div></div>
-  <div class="kpi-card cost"><div class="num">5.79B</div><div class="lbl">Cost YTD</div><div class="sub">8,271,339,346 VND</div><div class="vs" style="color:#D97706;">65.3% of revenue</div></div>
-  <div class="kpi-card gp1"><div class="num">3.08B</div><div class="lbl">GP1 YTD <span style="font-size:9px;opacity:.7;">(before back margin)</span></div><div class="sub">4,402,619,912 VND</div><div class="vs" style="color:#16A34A;">34.7% GP1 rate</div></div>
-  <div class="kpi-card gp1"><div class="num">3.35B</div><div class="lbl">GP2 YTD <span style="font-size:9px;opacity:.7;">(after back margin)</span></div><div class="sub">4,776,393,467 VND</div><div class="vs" style="color:#16A34A;">37.7% GP2 rate ✓</div></div>
-  <div class="kpi-card target"><div class="num">3.28B</div><div class="lbl">GP2 Plan YTD</div><div class="sub">4,691,299,617 VND</div><div class="vs" style="color:#7C3AED;">Internal plan H1</div></div>
-  <div class="kpi-card gpp"><div class="num">0.06B</div><div class="lbl">Variance vs Plan</div><div class="sub">+85,093,850 VND</div><div class="vs" style="color:#16A34A;">+1.8% above plan ✓</div></div>
-  <div class="kpi-card gap"><div class="num" style="color:#B45309;">2.95B</div><div class="lbl">GP2 Gap to Target</div><div class="sub">Cần thêm 4,223,606,533 VND</div><div class="vs" style="color:#DC2626;">H2 needs 4.22B GP2</div></div>
-</div>
-
-<!-- ═══ SECTION 2: PROGRESS BARS ═══ -->
-<div class="sec"><h2>🎯 Progress vs FY Target (9B GP2)</h2><div class="line"></div></div>
-<div class="progress-section">
-  <div class="prog-item"><div class="prog-label"><span class="name">Revenue (12.67B / ~25.0B FY target)</span><span class="vals">50.7% — H1 done, pace reasonable</span></div><div class="prog-bar"><div class="prog-fill rev" style="width:50.7%"></div></div></div>
-  <div class="prog-item"><div class="prog-label"><span class="name">GP2 actual (4.78B / 9.0B target)</span><span class="vals">53.1% — <span style="color:var(--green);font-weight:700;">On track vs plan ✓</span> but 9B requires ~4.2B in H2</span></div><div class="prog-bar"><div class="prog-fill gp" style="width:53.1%"></div></div></div>
-  <div class="prog-item"><div class="prog-label"><span class="name">GP2 vs Internal Plan (4.78B / 4.69B plan)</span><span class="vals"><span style="color:var(--green);font-weight:700;">+85.1M above H1 plan (1.8%)</span></span></div><div class="prog-bar"><div class="prog-fill gp" style="width:101.8%"></div></div></div>
-  <div class="prog-item" style="margin-bottom:0;"><div class="prog-label"><span class="name">Months completed (6 / 12 tháng)</span><span class="vals">50% campaign timeline · Back margin YTD: +373.8M (~2.9% of rev)</span></div><div class="prog-bar"><div class="prog-fill mo" style="width:50%"></div></div></div>
-  <div style="margin-top:12px;padding:10px 14px;background:#EFF6FF;border-radius:8px;font-size:12px;color:#1E40AF;">
-    <strong>📌 GP1 vs GP2 định nghĩa:</strong> GP1 = Revenue – Outsourcing Cost (trước back margin). GP2 = GP1 + Back Margin nhận từ FB/GG/TikTok/Zalo (~2.9% rev YTD = +373.8M). &nbsp;Target KPI = GP2 ≥ 9B.
-  </div>
-</div>
-
-
-<!-- ── BUDGET FILTER BAR ── -->
-<div class="budget-filter-bar">
-  <div class="filter-group">
-    <label>Month</label>
-    <div class="filter-chips" id="fc-month">
-      <span class="fchip active" data-val="ALL" onclick="setFilter('month','ALL',this)">All</span>
-      <span class="fchip" data-val="2025-10" onclick="setFilter('month','2025-10',this)">Oct</span>
-      <span class="fchip" data-val="2025-11" onclick="setFilter('month','2025-11',this)">Nov</span>
-      <span class="fchip" data-val="2025-12" onclick="setFilter('month','2025-12',this)">Dec</span>
-      <span class="fchip" data-val="2026-01" onclick="setFilter('month','2026-01',this)">Jan</span>
-      <span class="fchip" data-val="2026-02" onclick="setFilter('month','2026-02',this)">Feb</span>
-      <span class="fchip" data-val="2026-03" onclick="setFilter('month','2026-03',this)">Mar</span>
-      <span class="fchip plan" data-val="2026-04" onclick="setFilter('month','2026-04',this)">Apr 📋</span>
-      <span class="fchip plan" data-val="2026-05" onclick="setFilter('month','2026-05',this)">May 📋</span>
-      <span class="fchip plan" data-val="2026-06" onclick="setFilter('month','2026-06',this)">Jun 📋</span>
-      <span class="fchip plan" data-val="2026-07" onclick="setFilter('month','2026-07',this)">Jul 📋</span>
-      <span class="fchip plan" data-val="2026-08" onclick="setFilter('month','2026-08',this)">Aug 📋</span>
-      <span class="fchip plan" data-val="2026-09" onclick="setFilter('month','2026-09',this)">Sep 📋</span>
-    </div>
-  </div>
-  <div class="filter-group">
-    <label>Quarter / Period</label>
-    <div class="filter-chips" id="fc-quarter">
-      <span class="fchip active" data-val="ALL" onclick="setFilter('quarter','ALL',this)">All</span>
-      <span class="fchip" data-val="Q4-25" onclick="setFilter('quarter','Q4-25',this)">Q4 '25 (Oct–Dec)</span>
-      <span class="fchip" data-val="Q1-26" onclick="setFilter('quarter','Q1-26',this)">Q1 '26 (Jan–Mar)</span>
-      <span class="fchip plan" data-val="Q2-26" onclick="setFilter('quarter','Q2-26',this)">Q2 '26 (Apr–Jun) 📋</span>
-      <span class="fchip plan" data-val="Q3-26" onclick="setFilter('quarter','Q3-26',this)">Q3 '26 (Jul–Sep) 📋</span>
-    </div>
-    <span class="week-note">📌 Week-level data chưa có — dùng Quarter để group theo period</span>
-  </div>
-  <div class="filter-group">
-    <label>Function</label>
-    <div class="filter-chips" id="fc-func">
-      <span class="fchip active" data-val="ALL" onclick="setFilter('func','ALL',this)">All</span>
-      <span class="fchip" data-val="MEDIA" onclick="setFilter('func','MEDIA',this)">Media</span>
-      <span class="fchip" data-val="CREATIVE" onclick="setFilter('func','CREATIVE',this)">Creative</span>
-      <span class="fchip" data-val="LIVESTREAM" onclick="setFilter('func','LIVESTREAM',this)">Livestream</span>
-      <span class="fchip" data-val="STG/CONSULTING" onclick="setFilter('func','STG/CONSULTING',this)">Strategy</span>
-      <span class="fchip" data-val="DATA_PRODUCT" onclick="setFilter('func','DATA_PRODUCT',this)">Data Product</span>
-    </div>
-  </div>
-  <div class="filter-group">
-    <label>Source</label>
-    <div class="filter-chips" id="fc-src">
-      <span class="fchip active" data-val="ALL" onclick="setFilter('src','ALL',this)">All</span>
-      <span class="fchip" data-val="Facebook" onclick="setFilter('src','Facebook',this)">Facebook</span>
-      <span class="fchip" data-val="Google" onclick="setFilter('src','Google',this)">Google</span>
-      <span class="fchip" data-val="TikTok" onclick="setFilter('src','TikTok',this)">TikTok</span>
-      <span class="fchip" data-val="Zalo" onclick="setFilter('src','Zalo',this)">Zalo</span>
-      <span class="fchip" data-val="Creative" onclick="setFilter('src','Creative',this)">Creative</span>
-      <span class="fchip" data-val="MCN" onclick="setFilter('src','MCN',this)">MCN</span>
-      <span class="fchip" data-val="Other" onclick="setFilter('src','Other',this)">Other</span>
-    </div>
-  </div>
-</div>
-<div class="filter-active-bar" id="filter-active-bar">
-  <span id="filter-label">🔍 Đang lọc: <strong id="filter-desc"></strong></span>
-  <button class="filter-reset" onclick="resetAllFilters()">✕ Reset</button>
-</div>
-
-<!-- ═══ SECTION 3: MONTHLY P&L + CHART ═══ -->
-<div class="sec"><h2>📈 Monthly P&L — Rev / Cost / GP1 / GP2 (Oct 2025 – Mar 2026)</h2><div class="line"></div></div>
-
-<!-- Bar Chart: GP2 actual vs Plan -->
-<div style="background:var(--white);border-radius:12px;padding:20px 24px;box-shadow:0 2px 8px rgba(0,0,0,.05);margin-bottom:16px;overflow-x:auto;">
-  <div style="font-size:12px;font-weight:700;color:var(--ink2);margin-bottom:20px;">GP2 Actual vs Plan — monthly (VND)</div>
-  <div style="display:flex;align-items:flex-end;gap:0;min-width:500px;">
-    <div style="width:44px;display:flex;flex-direction:column;justify-content:space-between;padding-bottom:44px;font-size:10px;color:var(--g3);text-align:right;padding-right:6px;height:180px;">
-      <span>1,400M</span><span>490.00M</span><span>0</span>
-    </div>
-    <div style="flex:1;display:flex;align-items:flex-end;gap:0;">
-      <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:0;padding:0 3px;">
-        <div style="width:100%;display:flex;gap:2px;align-items:flex-end;justify-content:center;">
-          <div style="flex:1;background:#16A34A;border-radius:4px 4px 0 0;height:48.7px;position:relative;" title="GP2 Actual: 432.3M"><div style="position:absolute;top:-16px;left:0;right:0;text-align:center;font-size:9px;color:#15803D;font-weight:700;">302.61M</div></div>
-          <div style="flex:1;background:rgba(124,58,237,.2);border:1.5px dashed #7C3AED;border-radius:4px 4px 0 0;height:30.2px;position:relative;" title="Plan: 268.0M"></div>
-        </div>
-        <div style="font-size:9.5px;color:var(--ink2);margin-top:5px;text-align:center;">Oct'25</div>
-        <div style="font-size:9px;color:#16A34A;font-weight:600;">+61%</div>
-      </div>
-      <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:0;padding:0 3px;">
-        <div style="width:100%;display:flex;gap:2px;align-items:flex-end;justify-content:center;">
-          <div style="flex:1;background:#16A34A;border-radius:4px 4px 0 0;height:106.6px;position:relative;" title="GP2 Actual: 947.0M"><div style="position:absolute;top:-16px;left:0;right:0;text-align:center;font-size:9px;color:#15803D;font-weight:700;">662.90M</div></div>
-          <div style="flex:1;background:rgba(124,58,237,.2);border:1.5px dashed #7C3AED;border-radius:4px 4px 0 0;height:97.7px;position:relative;" title="Plan: 868.2M"></div>
-        </div>
-        <div style="font-size:9.5px;color:var(--ink2);margin-top:5px;text-align:center;">Nov'25</div>
-        <div style="font-size:9px;color:#16A34A;font-weight:600;">+9%</div>
-      </div>
-      <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:0;padding:0 3px;">
-        <div style="width:100%;display:flex;gap:2px;align-items:flex-end;justify-content:center;">
-          <div style="flex:1;background:#16A34A;border-radius:4px 4px 0 0;height:107.5px;position:relative;" title="GP2 Actual: 954.8M"><div style="position:absolute;top:-16px;left:0;right:0;text-align:center;font-size:9px;color:#15803D;font-weight:700;">668.36M</div></div>
-          <div style="flex:1;background:rgba(124,58,237,.2);border:1.5px dashed #7C3AED;border-radius:4px 4px 0 0;height:113.7px;position:relative;" title="Plan: 1010.2M"></div>
-        </div>
-        <div style="font-size:9.5px;color:var(--ink2);margin-top:5px;text-align:center;">Dec'25</div>
-        <div style="font-size:9px;color:#DC2626;font-weight:600;">-5%</div>
-      </div>
-      <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:0;padding:0 3px;">
-        <div style="width:100%;display:flex;gap:2px;align-items:flex-end;justify-content:center;">
-          <div style="flex:1;background:#16A34A;border-radius:4px 4px 0 0;height:39.3px;position:relative;" title="GP2 Actual: 348.7M"><div style="position:absolute;top:-16px;left:0;right:0;text-align:center;font-size:9px;color:#15803D;font-weight:700;">244.09M</div></div>
-          <div style="flex:1;background:rgba(124,58,237,.2);border:1.5px dashed #7C3AED;border-radius:4px 4px 0 0;height:63.4px;position:relative;" title="Plan: 562.8M"></div>
-        </div>
-        <div style="font-size:9.5px;color:var(--ink2);margin-top:5px;text-align:center;">Jan'26</div>
-        <div style="font-size:9px;color:#DC2626;font-weight:600;">-38%</div>
-      </div>
-      <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:0;padding:0 3px;">
-        <div style="width:100%;display:flex;gap:2px;align-items:flex-end;justify-content:center;">
-          <div style="flex:1;background:#16A34A;border-radius:4px 4px 0 0;height:91.6px;position:relative;" title="GP2 Actual: 814.0M"><div style="position:absolute;top:-16px;left:0;right:0;text-align:center;font-size:9px;color:#15803D;font-weight:700;">569.80M</div></div>
-          <div style="flex:1;background:rgba(124,58,237,.2);border:1.5px dashed #7C3AED;border-radius:4px 4px 0 0;height:63.1px;position:relative;" title="Plan: 560.8M"></div>
-        </div>
-        <div style="font-size:9.5px;color:var(--ink2);margin-top:5px;text-align:center;">Feb'26</div>
-        <div style="font-size:9px;color:#16A34A;font-weight:600;">+45%</div>
-      </div>
-      <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:0;padding:0 3px;">
-        <div style="width:100%;display:flex;gap:2px;align-items:flex-end;justify-content:center;">
-          <div style="flex:1;background:#16A34A;border-radius:4px 4px 0 0;height:144.1px;position:relative;" title="GP2 Actual: 1279.6M"><div style="position:absolute;top:-16px;left:0;right:0;text-align:center;font-size:9px;color:#15803D;font-weight:700;">895.72M</div></div>
-          <div style="flex:1;background:rgba(124,58,237,.2);border:1.5px dashed #7C3AED;border-radius:4px 4px 0 0;height:160.0px;position:relative;" title="Plan: 1421.3M"></div>
-        </div>
-        <div style="font-size:9.5px;color:var(--ink2);margin-top:5px;text-align:center;">Mar'26</div>
-        <div style="font-size:9px;color:#DC2626;font-weight:600;">-10%</div>
-      </div>
-    </div>
-  </div>
-  <div style="display:flex;gap:20px;margin-top:14px;font-size:11px;">
-    <div style="display:flex;align-items:center;gap:5px;"><div style="width:12px;height:12px;background:#16A34A;border-radius:2px;"></div> GP2 Actual</div>
-    <div style="display:flex;align-items:center;gap:5px;"><div style="width:12px;height:12px;background:rgba(124,58,237,.2);border:1.5px dashed #7C3AED;border-radius:2px;"></div> GP2 Plan</div>
-    <div style="margin-left:auto;font-size:10px;color:var(--g3);">Source: 04_03_04 Paxy Report + 04_02_01 GP Planning Total</div>
-  </div>
-</div>
-
-<!-- Monthly P&L Table -->
-<div class="mtable-wrap">
-  <table class="mtable">
-    <thead>
-      <tr>
-        <th style="text-align:left;">Tháng</th>
-        <th>Revenue (VND)</th>
-        <th>Cost (VND)</th>
-        <th>GP1 <span style="font-size:9px;opacity:.7;">pre-margin</span></th>
-        <th>GP2 <span style="font-size:9px;opacity:.7;">post-margin</span></th>
-        <th>GP2%</th>
-        <th>Plan GP2</th>
-        <th>Variance vs Plan</th>
-        <th>YoY GP2 <span style="font-size:9px;opacity:.7;">(FY25)</span></th>
-      </tr>
-    </thead>
-    <tbody id="monthly-tbody">
-      <tr class="" data-month="2025-10" data-quarter="Q4-25">
-        <td>Oct '25</td>
-        <td>2,463,744,968</td>
-        <td>3,282,721,728</td>
-        <td class="cell-pos">205,596,026</td>
-        <td class="cell-pos" style="font-weight:600;">216,166,666</td>
-        <td style="color:#16A34A;font-weight:700;">35.1%</td>
-        <td>134,018,718</td>
-        <td style="color:#16A34A;font-weight:600;">—</td>
-        <td style="color:#16A34A;font-weight:600;">—</td>
-      </tr>
-      <tr class="" data-month="2025-11" data-quarter="Q4-25">
-        <td>Nov '25</td>
-        <td>4,600,687,348</td>
-        <td>5,539,502,976</td>
-        <td class="cell-pos">457,733,965</td>
-        <td class="cell-pos" style="font-weight:600;">473,513,597</td>
-        <td style="color:#16A34A;font-weight:700;">41.2%</td>
-        <td>434,099,268</td>
-        <td style="color:#16A34A;font-weight:600;">—</td>
-        <td style="color:#16A34A;font-weight:600;">—</td>
-      </tr>
-      <tr class="" data-month="2025-12" data-quarter="Q4-25">
-        <td>Dec '25</td>
-        <td>4,676,464,524</td>
-        <td>5,991,590,284</td>
-        <td class="cell-pos">420,167,346</td>
-        <td class="cell-pos" style="font-weight:600;">477,404,652</td>
-        <td style="color:#16A34A;font-weight:700;">40.8%</td>
-        <td>505,104,952</td>
-        <td style="color:#DC2626;font-weight:600;">—</td>
-        <td style="color:#16A34A;font-weight:600;">—</td>
-      </tr>
-      <tr class="" data-month="2026-01" data-quarter="Q1-26">
-        <td>Jan '26</td>
-        <td>3,638,573,620</td>
-        <td>6,124,005,352</td>
-        <td class="cell-pos">144,142,736</td>
-        <td class="cell-pos" style="font-weight:600;">174,335,772</td>
-        <td style="color:#DC2626;font-weight:700;">19.2%</td>
-        <td>281,393,980</td>
-        <td style="color:#DC2626;font-weight:600;">—</td>
-        <td style="color:#DC2626;font-weight:600;">—</td>
-      </tr>
-      <tr class="" data-month="2026-02" data-quarter="Q1-26">
-        <td>Feb '26</td>
-        <td>3,819,573,270</td>
-        <td>4,543,118,224</td>
-        <td class="cell-pos">387,003,540</td>
-        <td class="cell-pos" style="font-weight:600;">406,976,398</td>
-        <td style="color:#16A34A;font-weight:700;">42.6%</td>
-        <td>280,401,914</td>
-        <td style="color:#16A34A;font-weight:600;">—</td>
-        <td style="color:#DC2626;font-weight:600;">—</td>
-      </tr>
-      <tr class="" data-month="2026-03" data-quarter="Q1-26">
-        <td>Mar '26</td>
-        <td>6,148,874,786</td>
-        <td>7,604,418,820</td>
-        <td class="cell-pos">586,666,344</td>
-        <td class="cell-pos" style="font-weight:600;">639,799,648</td>
-        <td style="color:#16A34A;font-weight:700;">41.6%</td>
-        <td>710,630,978</td>
-        <td style="color:#DC2626;font-weight:600;">—</td>
-        <td style="color:#DC2626;font-weight:600;">—</td>
-      </tr>
-      <tr class="plan-row" data-month="2026-04" data-quarter="Q2-26" style="background:#F9F5FF;">
-        <td>Apr '26 <span style="font-size:9px;background:#EDE9FE;color:#7C3AED;border-radius:3px;padding:1px 5px;font-weight:700;">PLAN</span></td>
-        <td>6,613,234,964</td>
-        <td>8,957,885,092</td>
-        <td class="cell-pos">533,573,104</td>
-        <td class="cell-pos" style="font-weight:600;">533,573,104</td>
-        <td style="color:#D97706;font-weight:700;">32.3%</td>
-        <td>533,573,104</td>
-        <td style="color:#16A34A;font-weight:600;">—</td>
-        <td style="color:#9EA3AF;">📋</td>
-      </tr>
-      <tr class="plan-row" data-month="2026-05" data-quarter="Q2-26" style="background:#F9F5FF;">
-        <td>May '26 <span style="font-size:9px;background:#EDE9FE;color:#7C3AED;border-radius:3px;padding:1px 5px;font-weight:700;">PLAN</span></td>
-        <td>6,660,103,054</td>
-        <td>10,514,606,108</td>
-        <td class="cell-pos">350,700,000</td>
-        <td class="cell-pos" style="font-weight:600;">350,700,000</td>
-        <td style="color:#DC2626;font-weight:700;">21.1%</td>
-        <td>350,700,000</td>
-        <td style="color:#16A34A;font-weight:600;">—</td>
-        <td style="color:#9EA3AF;">📋</td>
-      </tr>
-      <tr class="plan-row" data-month="2026-06" data-quarter="Q2-26" style="background:#F9F5FF;">
-        <td>Jun '26 <span style="font-size:9px;background:#EDE9FE;color:#7C3AED;border-radius:3px;padding:1px 5px;font-weight:700;">PLAN</span></td>
-        <td>4,904,686,360</td>
-        <td>7,807,772,720</td>
-        <td class="cell-pos">250,200,000</td>
-        <td class="cell-pos" style="font-weight:600;">250,200,000</td>
-        <td style="color:#DC2626;font-weight:700;">20.4%</td>
-        <td>250,200,000</td>
-        <td style="color:#16A34A;font-weight:600;">—</td>
-        <td style="color:#9EA3AF;">📋</td>
-      </tr>
-      <tr class="plan-row" data-month="2026-07" data-quarter="Q3-26" style="background:#F9F5FF;">
-        <td>Jul '26 <span style="font-size:9px;background:#EDE9FE;color:#7C3AED;border-radius:3px;padding:1px 5px;font-weight:700;">PLAN</span></td>
-        <td>3,323,019,252</td>
-        <td>4,808,838,504</td>
-        <td class="cell-pos">229,650,000</td>
-        <td class="cell-pos" style="font-weight:600;">229,650,000</td>
-        <td style="color:#D97706;font-weight:700;">27.6%</td>
-        <td>229,650,000</td>
-        <td style="color:#16A34A;font-weight:600;">—</td>
-        <td style="color:#9EA3AF;">📋</td>
-      </tr>
-      <tr class="plan-row" data-month="2026-08" data-quarter="Q3-26" style="background:#F9F5FF;">
-        <td>Aug '26 <span style="font-size:9px;background:#EDE9FE;color:#7C3AED;border-radius:3px;padding:1px 5px;font-weight:700;">PLAN</span></td>
-        <td>1,842,242,400</td>
-        <td>2,031,684,800</td>
-        <td class="cell-pos">206,600,000</td>
-        <td class="cell-pos" style="font-weight:600;">206,600,000</td>
-        <td style="color:#16A34A;font-weight:700;">44.9%</td>
-        <td>206,600,000</td>
-        <td style="color:#16A34A;font-weight:600;">—</td>
-        <td style="color:#9EA3AF;">📋</td>
-      </tr>
-      <tr class="plan-row" data-month="2026-09" data-quarter="Q3-26" style="background:#F9F5FF;">
-        <td>Sep '26 <span style="font-size:9px;background:#EDE9FE;color:#7C3AED;border-radius:3px;padding:1px 5px;font-weight:700;">PLAN</span></td>
-        <td>1,327,479,370</td>
-        <td>1,590,958,740</td>
-        <td class="cell-pos">133,000,000</td>
-        <td class="cell-pos" style="font-weight:600;">133,000,000</td>
-        <td style="color:#16A34A;font-weight:700;">40.1%</td>
-        <td>133,000,000</td>
-        <td style="color:#16A34A;font-weight:600;">—</td>
-        <td style="color:#9EA3AF;">📋</td>
-      </tr>
-    </tbody>
-    <tfoot>
-      <tr>
-        <td><strong id="table-footer-label">YTD H1 (6 tháng actual)</strong></td>
-        <td><strong>12,673,959,258</strong></td>
-        <td><strong>8,271,339,346</strong></td>
-        <td class="cell-pos"><strong>4,402,619,912</strong></td>
-        <td class="cell-pos" style="font-weight:700;">4,776,393,467</td>
-        <td style="color:#7C3AED;font-weight:700;">37.7%</td>
-        <td><strong>4,691,299,617</strong></td>
-        <td style="color:#16A34A;font-weight:700;">+85,093,850 (+1.8%)</td>
-        <td style="color:#16A34A;font-weight:700;">+10.4% YoY</td>
-      </tr>
-    </tfoot>
-  </table>
-</div>
-
-<!-- ═══ SECTION 4: BY FUNCTION ═══ -->
-<div class="sec"><h2>🔩 Phân tích theo Function — Rev / Cost / GP1 / GP2</h2><div class="line"></div><span class="pill">YTD H1</span></div>
-<div class="mtable-wrap">
-  <table class="mtable">
-    <thead>
-      <tr>
-        <th style="text-align:left;">Function</th>
-        <th>Revenue (VND)</th>
-        <th>Cost (VND)</th>
-        <th>GP1 (VND)</th>
-        <th>GP2 (VND)</th>
-        <th>GP2 Rate</th>
-        <th>Plan GP2</th>
-        <th>Var vs Plan</th>
-        <th>GP2 Rev Share</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td data-func="MEDIA"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#2563EB;margin-right:6px;"></span><strong>MEDIA</strong></td>
-        <td>10,540,850,070</td>
-        <td>7,039,261,169</td>
-        <td class="cell-pos">3,501,588,901</td>
-        <td class="cell-pos" style="font-weight:600;">3,875,361,456</td>
-        <td style="color:#16A34A;font-weight:700;">36.8%</td>
-        <td>3,634,190,000</td>
-        <td style="color:#16A34A;font-weight:600;">+241,171,456 (+6.6%)</td>
-        <td>
-          <div style="display:flex;align-items:center;gap:6px;">
-            <div style="flex:1;background:#F0F2F5;border-radius:4px;height:6px;"><div style="background:#2563EB;width:81.1%;height:6px;border-radius:4px;"></div></div>
-            <span style="font-size:11px;color:var(--ink2);white-space:nowrap;">81.1%</span>
-          </div>
-        </td>
-      </tr>
-      <tr data-func="CREATIVE">
-        <td><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#C41E24;margin-right:6px;"></span><strong>CREATIVE</strong></td>
-        <td>1,780,409,188</td>
-        <td>1,182,970,333</td>
-        <td class="cell-pos">597,438,855</td>
-        <td class="cell-pos" style="font-weight:600;">597,438,855</td>
-        <td style="color:#D97706;font-weight:700;">33.6%</td>
-        <td>690,700,000</td>
-        <td style="color:#DC2626;font-weight:600;">-93,261,145 (-13.5%)</td>
-        <td>
-          <div style="display:flex;align-items:center;gap:6px;">
-            <div style="flex:1;background:#F0F2F5;border-radius:4px;height:6px;"><div style="background:#C41E24;width:12.5%;height:6px;border-radius:4px;"></div></div>
-            <span style="font-size:11px;color:var(--ink2);white-space:nowrap;">12.5%</span>
-          </div>
-        </td>
-      </tr>
-      <tr data-func="LIVESTREAM">
-        <td><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#E85C0D;margin-right:6px;"></span><strong>LIVESTREAM</strong></td>
-        <td>102,700,000</td>
-        <td>44,444,444</td>
-        <td class="cell-pos">58,255,556</td>
-        <td class="cell-pos" style="font-weight:600;">58,255,556</td>
-        <td style="color:#16A34A;font-weight:700;">56.7%</td>
-        <td>47,100,000</td>
-        <td style="color:#16A34A;font-weight:600;">+11,155,556 (+23.7%)</td>
-        <td>
-          <div style="display:flex;align-items:center;gap:6px;">
-            <div style="flex:1;background:#F0F2F5;border-radius:4px;height:6px;"><div style="background:#E85C0D;width:1.2%;height:6px;border-radius:4px;"></div></div>
-            <span style="font-size:11px;color:var(--ink2);white-space:nowrap;">1.2%</span>
-          </div>
-        </td>
-      </tr>
-      <tr data-func="STG/CONSULTING">
-        <td><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#7C3AED;margin-right:6px;"></span><strong>STG / CONSULTING</strong></td>
-        <td>170,000,000</td>
-        <td>0</td>
-        <td class="cell-pos">170,000,000</td>
-        <td class="cell-pos" style="font-weight:600;">170,000,000</td>
-        <td style="color:#16A34A;font-weight:700;">100.0%</td>
-        <td>170,000,000</td>
-        <td style="color:#16A34A;font-weight:600;">+0 (+0.0%)</td>
-        <td>
-          <div style="display:flex;align-items:center;gap:6px;">
-            <div style="flex:1;background:#F0F2F5;border-radius:4px;height:6px;"><div style="background:#7C3AED;width:3.6%;height:6px;border-radius:4px;"></div></div>
-            <span style="font-size:11px;color:var(--ink2);white-space:nowrap;">3.6%</span>
-          </div>
-        </td>
-      </tr>
-      <tr data-func="DATA_PRODUCT">
-        <td><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#16A34A;margin-right:6px;"></span><strong>DATA_PRODUCT</strong></td>
-        <td>80,000,000</td>
-        <td>0</td>
-        <td class="cell-pos">80,000,000</td>
-        <td class="cell-pos" style="font-weight:600;">80,000,000</td>
-        <td style="color:#16A34A;font-weight:700;">100.0%</td>
-        <td>80,000,000</td>
-        <td style="color:#16A34A;font-weight:600;">+0 (+0.0%)</td>
-        <td>
-          <div style="display:flex;align-items:center;gap:6px;">
-            <div style="flex:1;background:#F0F2F5;border-radius:4px;height:6px;"><div style="background:#16A34A;width:1.7%;height:6px;border-radius:4px;"></div></div>
-            <span style="font-size:11px;color:var(--ink2);white-space:nowrap;">1.7%</span>
-          </div>
-        </td>
-      </tr>
-      <tr data-func="CONCEPT">
-        <td><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#9EA3AF;margin-right:6px;"></span><strong>CONCEPT</strong></td>
-        <td>0</td>
-        <td>4,661,400</td>
-        <td class="cell-neg">-4,661,400</td>
-        <td class="cell-neg" style="font-weight:600;">-4,661,400</td>
-        <td style="color:#DC2626;font-weight:700;">—</td>
-        <td>0</td>
-        <td style="color:#DC2626;font-weight:600;">-4,661,400 (+0.0%)</td>
-        <td>
-          <div style="display:flex;align-items:center;gap:6px;">
-            <div style="flex:1;background:#F0F2F5;border-radius:4px;height:6px;"><div style="background:#9EA3AF;width:0.0%;height:6px;border-radius:4px;"></div></div>
-            <span style="font-size:11px;color:var(--ink2);white-space:nowrap;">-0.1%</span>
-          </div>
-        </td>
-      </tr>
-    </tbody>
-    <tfoot>
-      <tr>
-        <td><strong>TOTAL</strong></td>
-        <td><strong>12,673,959,258</strong></td>
-        <td><strong>8,271,339,346</strong></td>
-        <td class="cell-pos"><strong>4,402,619,912</strong></td>
-        <td class="cell-pos" style="font-weight:700;">4,776,393,467</td>
-        <td style="color:#7C3AED;font-weight:700;">37.7%</td>
-        <td>4,691,299,617</td>
-        <td style="color:#16A34A;font-weight:700;">+85,093,850 (+1.8%)</td>
-        <td style="font-weight:700;">100%</td>
-      </tr>
-    </tfoot>
-  </table>
-</div>
-
-
-<!-- ═══ SECTION 4b: BY SOURCE ═══ -->
-<div class="sec" id="sec-source"><h2>📡 Phân tích theo Source / Channel — H1 Actual</h2><div class="line"></div><span class="pill">Oct'25 – Mar'26</span></div>
-<div class="mtable-wrap" id="source-table-wrap">
-  <table class="mtable">
-    <thead>
-      <tr>
-        <th style="text-align:left;">Source</th>
-        <th>Revenue (VND)</th>
-        <th>Cost (VND)</th>
-        <th>GP2 (VND)</th>
-        <th>GP2%</th>
-        <th>Rev Share</th>
-      </tr>
-    </thead>
-    <tbody id="source-tbody">
-      <tr data-src="Facebook">
-        <td><strong>Facebook</strong></td>
-        <td>7,918,000,000</td>
-        <td>10,912,000,000</td>
-        <td class="cell-pos" style="font-weight:600;">615,500,000</td>
-        <td style="color:#D97706;font-weight:700;">31.1%</td>
-        <td><div style="display:flex;align-items:center;gap:6px;"><div style="flex:1;background:#F0F2F5;border-radius:4px;height:6px;"><div style="background:#B11116;width:100.0%;height:6px;border-radius:4px;"></div></div><span style="font-size:11px;color:var(--ink2);white-space:nowrap;">48.6%</span></div></td>
-      </tr>
-      <tr data-src="Google">
-        <td><strong>Google</strong></td>
-        <td>2,240,000,000</td>
-        <td>1,508,000,000</td>
-        <td class="cell-pos" style="font-weight:600;">371,500,000</td>
-        <td style="color:#16A34A;font-weight:700;">66.3%</td>
-        <td><div style="display:flex;align-items:center;gap:6px;"><div style="flex:1;background:#F0F2F5;border-radius:4px;height:6px;"><div style="background:#2563EB;width:41.3%;height:6px;border-radius:4px;"></div></div><span style="font-size:11px;color:var(--ink2);white-space:nowrap;">13.8%</span></div></td>
-      </tr>
-      <tr data-src="Zalo">
-        <td><strong>Zalo</strong></td>
-        <td>930,000,000</td>
-        <td>1,096,000,000</td>
-        <td class="cell-pos" style="font-weight:600;">95,500,000</td>
-        <td style="color:#16A34A;font-weight:700;">41.1%</td>
-        <td><div style="display:flex;align-items:center;gap:6px;"><div style="flex:1;background:#F0F2F5;border-radius:4px;height:6px;"><div style="background:#0055A5;width:17.1%;height:6px;border-radius:4px;"></div></div><span style="font-size:11px;color:var(--ink2);white-space:nowrap;">5.7%</span></div></td>
-      </tr>
-      <tr data-src="TikTok">
-        <td><strong>TikTok</strong></td>
-        <td>198,000,000</td>
-        <td>284,000,000</td>
-        <td class="cell-pos" style="font-weight:600;">14,000,000</td>
-        <td style="color:#D97706;font-weight:700;">28.3%</td>
-        <td><div style="display:flex;align-items:center;gap:6px;"><div style="flex:1;background:#F0F2F5;border-radius:4px;height:6px;"><div style="background:#00B3C8;width:3.6%;height:6px;border-radius:4px;"></div></div><span style="font-size:11px;color:var(--ink2);white-space:nowrap;">1.2%</span></div></td>
-      </tr>
-      <tr data-src="Creative">
-        <td><strong>Creative</strong></td>
-        <td>900,000,000</td>
-        <td>320,000,000</td>
-        <td class="cell-pos" style="font-weight:600;">185,000,000</td>
-        <td style="color:#16A34A;font-weight:700;">82.2%</td>
-        <td><div style="display:flex;align-items:center;gap:6px;"><div style="flex:1;background:#F0F2F5;border-radius:4px;height:6px;"><div style="background:#C41E24;width:16.6%;height:6px;border-radius:4px;"></div></div><span style="font-size:11px;color:var(--ink2);white-space:nowrap;">5.5%</span></div></td>
-      </tr>
-      <tr data-src="MCN">
-        <td><strong>MCN</strong></td>
-        <td>40,000,000</td>
-        <td>108,000,000</td>
-        <td class="cell-neg" style="font-weight:600;">-3,500,000</td>
-        <td style="color:#DC2626;font-weight:700;">-35.0%</td>
-        <td><div style="display:flex;align-items:center;gap:6px;"><div style="flex:1;background:#F0F2F5;border-radius:4px;height:6px;"><div style="background:#C41E24;width:0.7%;height:6px;border-radius:4px;"></div></div><span style="font-size:11px;color:var(--ink2);white-space:nowrap;">0.2%</span></div></td>
-      </tr>
-      <tr data-src="Other">
-        <td><strong>Other</strong></td>
-        <td>4,052,000,000</td>
-        <td>6,768,000,000</td>
-        <td class="cell-pos" style="font-weight:600;">167,000,000</td>
-        <td style="color:#D97706;font-weight:700;">16.5%</td>
-        <td><div style="display:flex;align-items:center;gap:6px;"><div style="flex:1;background:#F0F2F5;border-radius:4px;height:6px;"><div style="background:#C41E24;width:74.7%;height:6px;border-radius:4px;"></div></div><span style="font-size:11px;color:var(--ink2);white-space:nowrap;">24.9%</span></div></td>
-      </tr>
-    </tbody>
-    <tfoot>
-      <tr>
-        <td><strong>TOTAL</strong></td>
-        <td><strong>8,139,000,000</strong></td>
-        <td><strong>5,249,000,000</strong></td>
-        <td class="cell-pos" style="font-weight:700;">2,890,000,000</td>
-        <td style="color:#7C3AED;font-weight:700;">35.5%</td>
-        <td style="font-weight:700;">100%</td>
-      </tr>
-    </tfoot>
-  </table>
-</div>
-<div style="background:#EFF6FF;border-left:4px solid #2563EB;border-radius:8px;padding:10px 16px;margin-bottom:20px;font-size:12px;color:#1E40AF;">
-  💡 <strong>Source note:</strong> Data từ Paxy Report H1 actual (CEVAS008). Source = kênh chi tiêu chính. "Other" bao gồm: AdBroadcast, booking, planning, vendor trực tiếp. FB chiếm 48.6% rev nhưng GP2 rate chỉ 31.1% vs GG 66.4%.
-</div>
-
-<!-- ═══ SECTION 5: BY SOLUTION ═══ -->
-<div class="sec"><h2>🎨 Phân tích theo Solution — Branding vs LeadGen</h2><div class="line"></div><span class="pill">YTD H1</span></div>
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;">
-  <div style="background:var(--white);border-radius:12px;padding:20px;box-shadow:0 2px 8px rgba(0,0,0,.05);border-top:4px solid #2A4574;">
-    <div style="font-size:13px;font-weight:800;color:#2A4574;margin-bottom:6px;">🎨 BRANDING</div>
-    <div style="font-size:10.5px;color:var(--g3);margin-bottom:14px;">Brand Strategy + Media Branding + Livestream</div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px;">
-      <div style="background:#F8F9FA;border-radius:8px;padding:10px 12px;text-align:center;">
-        <div style="font-size:16px;font-weight:800;color:var(--ink);">3.42B</div>
-        <div style="font-size:10px;color:var(--g3);">Revenue</div>
-        <div style="font-size:10px;color:#2A4574;font-weight:600;">38.5% of total</div>
-      </div>
-      <div style="background:#F8F9FA;border-radius:8px;padding:10px 12px;text-align:center;">
-        <div style="font-size:16px;font-weight:800;color:#16A34A;">2.25B</div>
-        <div style="font-size:10px;color:var(--g3);">GP2</div>
-        <div style="font-size:10px;color:#2A4574;font-weight:600;">67.2% of total GP2</div>
-      </div>
-    </div>
-    <div style="background:#F0F2F5;border-radius:6px;padding:10px 14px;">
-      <div style="display:flex;justify-content:space-between;margin-bottom:4px;">
-        <span style="font-size:11.5px;color:var(--ink2);">GP2 Rate</span>
-        <span style="font-size:14px;font-weight:800;color:#16A34A;">65.8%</span>
-      </div>
-      <div style="background:#E2E5EA;border-radius:4px;height:8px;"><div style="background:#2A4574;width:65.8%;height:8px;border-radius:4px;"></div></div>
-    </div>
-  </div>
-  <div style="background:var(--white);border-radius:12px;padding:20px;box-shadow:0 2px 8px rgba(0,0,0,.05);border-top:4px solid #C41E24;">
-    <div style="font-size:13px;font-weight:800;color:#C41E24;margin-bottom:6px;">⚡ LEADGEN</div>
-    <div style="font-size:10.5px;color:var(--g3);margin-bottom:14px;">Performance Media + Lead Gen + Creative PFM</div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px;">
-      <div style="background:#F8F9FA;border-radius:8px;padding:10px 12px;text-align:center;">
-        <div style="font-size:16px;font-weight:800;color:var(--ink);">5.46B</div>
-        <div style="font-size:10px;color:var(--g3);">Revenue</div>
-        <div style="font-size:10px;color:#C41E24;font-weight:600;">61.5% of total</div>
-      </div>
-      <div style="background:#F8F9FA;border-radius:8px;padding:10px 12px;text-align:center;">
-        <div style="font-size:16px;font-weight:800;color:#16A34A;">1.10B</div>
-        <div style="font-size:10px;color:var(--g3);">GP2</div>
-        <div style="font-size:10px;color:#C41E24;font-weight:600;">32.8% of total GP2</div>
-      </div>
-    </div>
-    <div style="background:#F0F2F5;border-radius:6px;padding:10px 14px;">
-      <div style="display:flex;justify-content:space-between;margin-bottom:4px;">
-        <span style="font-size:11.5px;color:var(--ink2);">GP2 Rate</span>
-        <span style="font-size:14px;font-weight:800;color:#D97706;">20.1%</span>
-      </div>
-      <div style="background:#E2E5EA;border-radius:4px;height:8px;"><div style="background:#C41E24;width:20.1%;height:8px;border-radius:4px;"></div></div>
-    </div>
-  </div>
-</div>
-<div style="background:#FEF9C3;border-left:4px solid #EAB308;border-radius:8px;padding:10px 16px;margin-bottom:24px;font-size:12px;color:#713F12;">
-  💡 <strong>Insight:</strong> BRANDING có GP2 rate 65.8% vs LEADGEN 20.1%. Dù BRANDING chiếm 38.5% revenue, nó đóng góp 67.2% GP2. → Mix shift về BRANDING sẽ boost GP2 rate tổng.
-</div>
-
-<!-- ═══ SECTION 6: YoY COMPARISON ═══ -->
-<div class="sec"><h2>📅 So sánh YoY — FY26 vs FY25 (cùng period Oct–Mar)</h2><div class="line"></div><span class="pill">CEVAS008 vs CEVAS005</span></div>
-<div class="mtable-wrap">
-  <table class="mtable">
-    <thead>
-      <tr>
-        <th style="text-align:left;">Tháng</th>
-        <th>FY26 Revenue</th>
-        <th>FY25 Revenue</th>
-        <th>Rev YoY Δ</th>
-        <th>FY26 GP2</th>
-        <th>FY25 GP2</th>
-        <th>GP2 YoY Δ</th>
-        <th>FY26 GP2%</th>
-        <th>FY25 GP2%</th>
-        <th>Rate Δ (pp)</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><strong>Oct '25</strong></td>
-        <td>1,231,872,484</td>
-        <td>859,400,000</td>
-        <td style="color:#16A34A;font-weight:600;">+43.3%</td>
-        <td class="cell-pos" style="font-weight:600;">432,333,332</td>
-        <td>256,211,111</td>
-        <td style="color:#16A34A;font-weight:700;">+68.7%</td>
-        <td style="color:var(--green);font-weight:600;">35.1%</td>
-        <td style="color:var(--ink2);">29.8%</td>
-        <td style="color:#16A34A;font-weight:600;">+5.3</td>
-      </tr>
-      <tr>
-        <td><strong>Nov '25</strong></td>
-        <td>2,300,343,674</td>
-        <td>1,358,711,650</td>
-        <td style="color:#16A34A;font-weight:600;">+69.3%</td>
-        <td class="cell-pos" style="font-weight:600;">947,027,194</td>
-        <td>283,140,264</td>
-        <td style="color:#16A34A;font-weight:700;">+234.5%</td>
-        <td style="color:var(--green);font-weight:600;">41.2%</td>
-        <td style="color:var(--ink2);">20.8%</td>
-        <td style="color:#16A34A;font-weight:600;">+20.3</td>
-      </tr>
-      <tr>
-        <td><strong>Dec '25</strong></td>
-        <td>2,338,232,262</td>
-        <td>2,279,085,171</td>
-        <td style="color:#16A34A;font-weight:600;">+2.6%</td>
-        <td class="cell-pos" style="font-weight:600;">954,809,304</td>
-        <td>836,373,817</td>
-        <td style="color:#16A34A;font-weight:700;">+14.2%</td>
-        <td style="color:var(--green);font-weight:600;">40.8%</td>
-        <td style="color:var(--ink2);">36.7%</td>
-        <td style="color:#16A34A;font-weight:600;">+4.1</td>
-      </tr>
-      <tr>
-        <td><strong>Jan '26</strong></td>
-        <td>1,819,286,810</td>
-        <td>1,262,237,347</td>
-        <td style="color:#16A34A;font-weight:600;">+44.1%</td>
-        <td class="cell-pos" style="font-weight:600;">348,671,545</td>
-        <td>396,523,600</td>
-        <td style="color:#DC2626;font-weight:700;">-12.1%</td>
-        <td style="color:var(--green);font-weight:600;">19.2%</td>
-        <td style="color:var(--ink2);">31.4%</td>
-        <td style="color:#D97706;font-weight:600;">-12.2</td>
-      </tr>
-      <tr>
-        <td><strong>Feb '26</strong></td>
-        <td>1,909,786,635</td>
-        <td>2,027,991,236</td>
-        <td style="color:#DC2626;font-weight:600;">-5.8%</td>
-        <td class="cell-pos" style="font-weight:600;">813,952,797</td>
-        <td>953,160,335</td>
-        <td style="color:#DC2626;font-weight:700;">-14.6%</td>
-        <td style="color:var(--green);font-weight:600;">42.6%</td>
-        <td style="color:var(--ink2);">47.0%</td>
-        <td style="color:#D97706;font-weight:600;">-4.4</td>
-      </tr>
-      <tr>
-        <td><strong>Mar '26</strong></td>
-        <td>3,074,437,393</td>
-        <td>3,235,380,934</td>
-        <td style="color:#DC2626;font-weight:600;">-5.0%</td>
-        <td class="cell-pos" style="font-weight:600;">1,279,599,295</td>
-        <td>1,600,363,907</td>
-        <td style="color:#DC2626;font-weight:700;">-20.0%</td>
-        <td style="color:var(--green);font-weight:600;">41.6%</td>
-        <td style="color:var(--ink2);">49.5%</td>
-        <td style="color:#D97706;font-weight:600;">-7.8</td>
-      </tr>
-    </tbody>
-    <tfoot>
-      <tr>
-        <td><strong>H1 Total</strong></td>
-        <td><strong>12,673,959,258</strong></td>
-        <td><strong>11,022,806,338</strong></td>
-        <td style="color:#16A34A;font-weight:700;">+15.0%</td>
-        <td class="cell-pos" style="font-weight:700;">4,776,393,467</td>
-        <td style="font-weight:600;">4,325,773,034</td>
-        <td style="color:#16A34A;font-weight:700;">+10.4%</td>
-        <td style="color:var(--purple);font-weight:700;">37.7%</td>
-        <td style="font-weight:600;">39.2%</td>
-        <td style="color:#D97706;font-weight:700;">-1.6</td>
-      </tr>
-    </tfoot>
-  </table>
-</div>
-<div style="background:#EFF6FF;border-left:4px solid #2563EB;border-radius:8px;padding:10px 16px;margin-bottom:24px;font-size:12px;color:#1E40AF;">
-  💡 <strong>YoY insight:</strong> Revenue FY26 tăng +15.0% YoY nhưng GP2 rate giảm 1.6pp (39.2% → 37.7%). GP2 tuyệt đối vẫn tăng +10.4% nhờ revenue scale. Back margin từ FB/GG platform rebates đóng góp +373.8M vào GP2 FY26.
-</div>
-
-<!-- ═══ SECTION 7: H2 GAP-TO-TARGET ═══ -->
-<div class="sec"><h2>🔮 H2 Forecast &amp; Gap to 9B Target</h2><div class="line"></div><span class="pill">Apr–Sep 2026 Projection</span></div>
-<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:16px;">
-  <div style="background:var(--white);border-radius:12px;padding:16px;box-shadow:0 2px 8px rgba(0,0,0,.05);border-top:4px solid #16A34A;text-align:center;">
-    <div style="font-size:20px;font-weight:800;color:#16A34A;">3.35B</div>
-    <div style="font-size:11px;color:var(--g3);margin-top:4px;">H1 Actual GP2</div>
-    <div style="font-size:10px;color:#16A34A;">+1.8% vs H1 plan</div>
-  </div>
-  <div style="background:var(--white);border-radius:12px;padding:16px;box-shadow:0 2px 8px rgba(0,0,0,.05);border-top:4px solid #7C3AED;text-align:center;">
-    <div style="font-size:20px;font-weight:800;color:#7C3AED;">2.18B</div>
-    <div style="font-size:11px;color:var(--g3);margin-top:4px;">H2 Internal Plan</div>
-    <div style="font-size:10px;color:var(--g3);">Apr–Sep 2026</div>
-  </div>
-  <div style="background:var(--white);border-radius:12px;padding:16px;box-shadow:0 2px 8px rgba(0,0,0,.05);border-top:4px solid #D97706;text-align:center;">
-    <div style="font-size:20px;font-weight:800;color:#D97706;">5.52B</div>
-    <div style="font-size:11px;color:var(--g3);margin-top:4px;">Full Year Projection</div>
-    <div style="font-size:10px;color:#D97706;">H1 actual + H2 plan</div>
-  </div>
-  <div style="background:var(--white);border-radius:12px;padding:16px;box-shadow:0 2px 8px rgba(0,0,0,.05);border-top:4px solid #DC2626;text-align:center;">
-    <div style="font-size:20px;font-weight:800;color:#DC2626;">-0.78B</div>
-    <div style="font-size:11px;color:var(--g3);margin-top:4px;">Gap vs 9B Target</div>
-    <div style="font-size:10px;color:#DC2626;">Cần thêm từ H2 scope</div>
-  </div>
-</div>
-
-<div style="background:var(--white);border-radius:12px;padding:16px 20px;box-shadow:0 2px 8px rgba(0,0,0,.05);margin-bottom:16px;">
-  <div style="font-size:12.5px;font-weight:700;color:var(--ink2);margin-bottom:12px;">📌 H2 Plan by Month (from GP Planning Total — CEVAS008):</div>
-  <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:8px;">
-    <div style="background:#F8F9FA;border-radius:8px;padding:10px 8px;text-align:center;"><div style="font-weight:700;color:#7C3AED;font-size:15px;">637.00M</div><div style="font-size:10px;color:var(--g3);margin-top:2px;">Apr '26</div></div>
-    <div style="background:#F8F9FA;border-radius:8px;padding:10px 8px;text-align:center;"><div style="font-weight:700;color:#7C3AED;font-size:15px;">384.30M</div><div style="font-size:10px;color:var(--g3);margin-top:2px;">May '26</div></div>
-    <div style="background:#F8F9FA;border-radius:8px;padding:10px 8px;text-align:center;"><div style="font-weight:700;color:#7C3AED;font-size:15px;">271.60M</div><div style="font-size:10px;color:var(--g3);margin-top:2px;">Jun '26</div></div>
-    <div style="background:#F8F9FA;border-radius:8px;padding:10px 8px;text-align:center;"><div style="font-weight:700;color:#7C3AED;font-size:15px;">261.80M</div><div style="font-size:10px;color:var(--g3);margin-top:2px;">Jul '26</div></div>
-    <div style="background:#F8F9FA;border-radius:8px;padding:10px 8px;text-align:center;"><div style="font-weight:700;color:#7C3AED;font-size:15px;">246.40M</div><div style="font-size:10px;color:var(--g3);margin-top:2px;">Aug '26</div></div>
-    <div style="background:#F8F9FA;border-radius:8px;padding:10px 8px;text-align:center;"><div style="font-weight:700;color:#7C3AED;font-size:15px;">161.00M</div><div style="font-size:10px;color:var(--g3);margin-top:2px;">Sep '26</div></div>
-  </div>
-</div>
-
-<!-- ═══ SECTION 8: KEY INSIGHTS ═══ -->
-<div class="sec"><h2>💡 Key Insights &amp; Action Items</h2><div class="line"></div></div>
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:24px;">
-  <div class="alert-card r-grn"><div class="alert-title">🟢 YTD GP2 above plan (+85.1M)</div><div class="alert-body">Actual GP2 4.78B vs plan 4.69B, trên plan +1.8%. Back margin đóng góp +373.8M từ MEDIA platform rebates (FB/GG/TikTok). Feb outperformed plan +45.1%.</div><div class="alert-action">✅ Action: Maintain media volume Apr–Jun để capture peak season GP2.</div></div>
-  <div class="alert-card r-red"><div class="alert-title">🔴 H2 gap 1.11B vs 9B target</div><div class="alert-body">H2 plan chỉ 3.11B nhưng cần 4.22B để hit 9B. Gap = 1.11B cần close. H2 plan = 74% of needed H2 GP2.</div><div class="alert-action">💡 Action: ① Push MCN/Livestream scope (high GP rate) ② Upsell Apr–May peak ③ Review NE incentive trigger.</div></div>
-  <div class="alert-card r-yellow"><div class="alert-title">⚠️ GP2 rate FY26 thấp hơn FY25 (37.7% vs 39.2%)</div><div class="alert-body">Dù revenue tăng +15.0% YoY, GP2 rate giảm 1.6pp. Nguyên nhân: LEADGEN media cost cao hơn (Jan GP1 chỉ 15.8%), Nov creative 434M margin thấp.</div><div class="alert-action">💡 Action: Review media LEADGEN cost structure + push BRANDING mix H2.</div></div>
-  <div class="alert-card r-grn"><div class="alert-title">🟢 BRANDING margin 66% vs LEADGEN 20%</div><div class="alert-body">BRANDING chiếm 38% revenue nhưng 67% GP2. Nếu tăng BRANDING revenue share lên 45%, GP2 rate tổng tăng ước ~3-4pp.</div><div class="alert-action">💡 Action: Propose thêm BRANDING scope H2 — Brand Audit, Media Branding 360.</div></div>
-</div>
-
-<div style="margin-top:40px;text-align:center;font-size:11px;color:#9EA3AF;padding-bottom:16px;">VAS × PMAX FY2026-2027 · Compiled 20/04/2026 · Owner: Hân Dương (Account, PMAX)</div>
-</div><!-- /tab-budget-team -->
 
 <!-- ══════════════════════════════
      TAB 3: MASTER WORKPLAN — HYBRID TIMELINE
@@ -4232,23 +3473,23 @@ document.addEventListener('DOMContentLoaded', renderWorkplanTable);
     <!-- KPI North Stars -->
   <div class="sec"><h2>🎯 North Star KPIs — FY26 Targets</h2><div class="line"></div><div class="pill">FY2026–2027</div></div>
   <div class="kpi-row">
-    <div class="kpi-box"><div class="kn">xxx</div><div class="kl">New Enrollment (NE)</div><div class="ksub">Min. target SY 26–27</div></div>
-    <div class="kpi-box blue"><div class="kn">xxx</div><div class="kl">Qualified Leads (QL)</div><div class="ksub">In-school-year</div></div>
-    <div class="kpi-box green"><div class="kn">xxx</div><div class="kl">PMAX GP Target (VND)</div><div class="ksub">Gross Profit min.</div></div>
-    <div class="kpi-box orange"><div class="kn">xxx</div><div class="kl">PMAX Revenue (VND)</div><div class="ksub">Contract FY26</div></div>
-    <div class="kpi-box purple"><div class="kn">xxx</div><div class="kl">VAS MKT Budget (VND)</div><div class="ksub">Total including other agencies</div></div>
+    <div class="kpi-box"><div class="kn">772</div><div class="kl">New Enrollment (NE)</div><div class="ksub">Min. target SY 26–27</div></div>
+    <div class="kpi-box blue"><div class="kn">3,000</div><div class="kl">Qualified Leads (QL)</div><div class="ksub">In-school-year</div></div>
+    <div class="kpi-box green"><div class="kn">9B</div><div class="kl">PMAX GP Target (VND)</div><div class="ksub">Gross Profit min.</div></div>
+    <div class="kpi-box orange"><div class="kn">~25B</div><div class="kl">PMAX Revenue (VND)</div><div class="ksub">Contract FY26</div></div>
+    <div class="kpi-box purple"><div class="kn">35B</div><div class="kl">VAS MKT Budget (VND)</div><div class="ksub">Total including other agencies</div></div>
   </div>
 
 
   <div class="funnel-row" style="margin-top:0;margin-bottom:20px;">
     <div style="font-size:12px;font-weight:700;margin-bottom:14px;color:var(--ink);">📊 Full Funnel KPI — FY26 Target</div>
     <div class="funnel">
-      <div class="funnel-step"><div class="funnel-box" style="background:#B11116;"><div class="funnel-num">xxx</div><div class="funnel-lbl">Lead</div></div><div class="funnel-cr">All channels</div></div>
-      <div class="funnel-step"><div class="funnel-box" style="background:#C41E24;"><div class="funnel-num">xxx</div><div class="funnel-lbl">Pre. Lead</div></div><div class="funnel-cr">CR ~xxx%</div></div>
-      <div class="funnel-step"><div class="funnel-box" style="background:#7C3AED;"><div class="funnel-num">xxx</div><div class="funnel-lbl">Q. Lead (all)</div></div><div class="funnel-cr">CR ~xxx%</div></div>
-      <div class="funnel-step"><div class="funnel-box" style="background:#2563EB;"><div class="funnel-num">xxx</div><div class="funnel-lbl">QL (SY 26-27)</div></div><div class="funnel-cr">In-SY filter</div></div>
-      <div class="funnel-step"><div class="funnel-box" style="background:#16A34A;"><div class="funnel-num">xxx</div><div class="funnel-lbl">NE Digital</div></div><div class="funnel-cr">CR ~xxx%</div></div>
-      <div class="funnel-step"><div class="funnel-box" style="background:#059669;"><div class="funnel-num">xxx</div><div class="funnel-lbl">NE Total</div></div><div class="funnel-cr">All channels</div></div>
+      <div class="funnel-step"><div class="funnel-box" style="background:#B11116;"><div class="funnel-num">17,085</div><div class="funnel-lbl">Lead</div></div><div class="funnel-cr">All channels</div></div>
+      <div class="funnel-step"><div class="funnel-box" style="background:#C41E24;"><div class="funnel-num">6,256</div><div class="funnel-lbl">Pre. Lead</div></div><div class="funnel-cr">CR ~36.6%</div></div>
+      <div class="funnel-step"><div class="funnel-box" style="background:#7C3AED;"><div class="funnel-num">4,057</div><div class="funnel-lbl">Q. Lead (all)</div></div><div class="funnel-cr">CR ~64.9%</div></div>
+      <div class="funnel-step"><div class="funnel-box" style="background:#2563EB;"><div class="funnel-num">3,000</div><div class="funnel-lbl">QL (SY 26-27)</div></div><div class="funnel-cr">In-SY filter</div></div>
+      <div class="funnel-step"><div class="funnel-box" style="background:#16A34A;"><div class="funnel-num">772</div><div class="funnel-lbl">NE Digital</div></div><div class="funnel-cr">CR ~25.7%</div></div>
+      <div class="funnel-step"><div class="funnel-box" style="background:#059669;"><div class="funnel-num">1,608</div><div class="funnel-lbl">NE Total</div></div><div class="funnel-cr">All channels</div></div>
     </div>
   </div>
 
@@ -4282,6 +3523,43 @@ document.addEventListener('DOMContentLoaded', renderWorkplanTable);
     </div>
   </div>
 
+
+  <!-- Budget YoY -->
+  <div class="sec"><h2>💰 Budget — PMAX × VAS YoY</h2><div class="line"></div></div>
+  <div class="info-card" style="margin-bottom:20px;">
+    <table style="width:100%;border-collapse:collapse;font-size:12.5px;">
+      <tr style="background:#1A1A2E;color:#fff;">
+        <th style="padding:10px 14px;text-align:left;border-radius:8px 0 0 0;">Metric</th>
+        <th style="padding:10px 14px;text-align:right;">FY2023</th>
+        <th style="padding:10px 14px;text-align:right;">FY2024</th>
+        <th style="padding:10px 14px;text-align:right;">FY2025</th>
+        <th style="padding:10px 14px;text-align:right;background:#B11116;border-radius:0 8px 0 0;">FY2026 ▲</th>
+      </tr>
+      <tr style="background:#FFF8F8;">
+        <td style="padding:10px 14px;font-weight:600;">VAS Total MKT Budget (VND)</td>
+        <td style="padding:10px 14px;text-align:right;color:#9EA3AF;">N/A</td>
+        <td style="padding:10px 14px;text-align:right;">40,000,000,000</td>
+        <td style="padding:10px 14px;text-align:right;">35,000,000,000</td>
+        <td style="padding:10px 14px;text-align:right;font-weight:700;color:#B11116;">35,000,000,000</td>
+      </tr>
+      <tr>
+        <td style="padding:10px 14px;font-weight:600;">PMAX Share (VND)</td>
+        <td style="padding:10px 14px;text-align:right;">18,191,058,584</td>
+        <td style="padding:10px 14px;text-align:right;">26,769,700,620</td>
+        <td style="padding:10px 14px;text-align:right;">27,081,060,000</td>
+        <td style="padding:10px 14px;text-align:right;font-weight:700;color:#B11116;">25,081,060,000</td>
+      </tr>
+      <tr style="background:#FFF8F8;">
+        <td style="padding:10px 14px;font-weight:600;">Pricing Model</td>
+        <td colspan="3" style="padding:10px 14px;text-align:right;color:#4A4B5E;">Unit Cost</td>
+        <td style="padding:10px 14px;text-align:right;font-weight:700;color:#B11116;">Unit Cost</td>
+      </tr>
+      <tr>
+        <td style="padding:10px 14px;font-weight:600;">Payment Terms</td>
+        <td colspan="4" style="padding:10px 14px;color:#4A4B5E;font-size:12px;">30% Deposit → 30% → 25% → 15%</td>
+      </tr>
+    </table>
+  </div>
 
 
   <!-- ── SOLUTION x PRODUCT ── -->
@@ -4352,11 +3630,11 @@ document.addEventListener('DOMContentLoaded', renderWorkplanTable);
           <div style="font-size:10.5px;color:rgba(255,255,255,.85);margin-top:3px;">Branding + Performance</div>
         </div>
         <div style="padding:10px 12px 12px;">
-          <div style="background:#F0F2F8;border-radius:5px;padding:6px 10px;margin-bottom:4px;font-size:11.5px;color:#1A1A2E;display:flex;justify-content:space-between;align-items:center;"><span>Media Branding</span><span style="font-size:11px;font-weight:700;color:#1A2570;">xxx</span></div>
-          <div style="background:#F0F2F8;border-radius:5px;padding:6px 10px;margin-bottom:4px;font-size:11.5px;color:#1A1A2E;display:flex;justify-content:space-between;align-items:center;"><span>Performance QL SY26-27</span><span style="font-size:11px;font-weight:700;color:#1A2570;">xxx</span></div>
-          <div style="background:#F0F2F8;border-radius:5px;padding:6px 10px;margin-bottom:4px;font-size:11.5px;color:#1A1A2E;display:flex;justify-content:space-between;align-items:center;"><span>Performance QL other SY</span><span style="font-size:11px;font-weight:700;color:#1A2570;">xxx</span></div>
+          <div style="background:#F0F2F8;border-radius:5px;padding:6px 10px;margin-bottom:4px;font-size:11.5px;color:#1A1A2E;display:flex;justify-content:space-between;align-items:center;"><span>Media Branding</span><span style="font-size:11px;font-weight:700;color:#1A2570;">5.6B</span></div>
+          <div style="background:#F0F2F8;border-radius:5px;padding:6px 10px;margin-bottom:4px;font-size:11.5px;color:#1A1A2E;display:flex;justify-content:space-between;align-items:center;"><span>Performance QL SY26-27</span><span style="font-size:11px;font-weight:700;color:#1A2570;">12.8B</span></div>
+          <div style="background:#F0F2F8;border-radius:5px;padding:6px 10px;margin-bottom:4px;font-size:11.5px;color:#1A1A2E;display:flex;justify-content:space-between;align-items:center;"><span>Performance QL other SY</span><span style="font-size:11px;font-weight:700;color:#1A2570;">3.17B</span></div>
           <div style="background:#F0F2F8;border-radius:5px;padding:6px 10px;margin-bottom:4px;font-size:11.5px;color:#1A1A2E;">FB · GG · Zalo · TikTok · BLS</div>
-          <div style="background:#F0F2F8;border-radius:5px;padding:6px 10px;font-size:11.5px;color:#1A1A2E;display:flex;justify-content:space-between;align-items:center;"><span>NE Incentive (42 students)</span><span style="font-size:11px;font-weight:700;color:#1A2570;">xxx</span></div>
+          <div style="background:#F0F2F8;border-radius:5px;padding:6px 10px;font-size:11.5px;color:#1A1A2E;display:flex;justify-content:space-between;align-items:center;"><span>NE Incentive (42 students)</span><span style="font-size:11px;font-weight:700;color:#1A2570;">1.05B</span></div>
         </div>
       </div>
 
@@ -4367,8 +3645,8 @@ document.addEventListener('DOMContentLoaded', renderWorkplanTable);
           <div style="font-size:10.5px;color:rgba(255,255,255,.85);margin-top:3px;">Concept + Production</div>
         </div>
         <div style="padding:10px 12px 12px;">
-          <div style="background:#F0F2F8;border-radius:5px;padding:6px 10px;margin-bottom:4px;font-size:11.5px;color:#1A1A2E;display:flex;justify-content:space-between;align-items:center;"><span>Concept (iTVC + KV tĩnh + KV động)</span><span style="font-size:11px;font-weight:700;color:#1A2570;">xxx</span></div>
-          <div style="background:#F0F2F8;border-radius:5px;padding:6px 10px;margin-bottom:4px;font-size:11.5px;color:#1A1A2E;display:flex;justify-content:space-between;align-items:center;"><span>Ads Creative (posts, GIF, video)</span><span style="font-size:11px;font-weight:700;color:#1A2570;">xxx</span></div>
+          <div style="background:#F0F2F8;border-radius:5px;padding:6px 10px;margin-bottom:4px;font-size:11.5px;color:#1A1A2E;display:flex;justify-content:space-between;align-items:center;"><span>Concept (iTVC + KV tĩnh + KV động)</span><span style="font-size:11px;font-weight:700;color:#1A2570;">1.14B</span></div>
+          <div style="background:#F0F2F8;border-radius:5px;padding:6px 10px;margin-bottom:4px;font-size:11.5px;color:#1A1A2E;display:flex;justify-content:space-between;align-items:center;"><span>Ads Creative (posts, GIF, video)</span><span style="font-size:11px;font-weight:700;color:#1A2570;">1.96B</span></div>
           <div style="background:#F0F2F8;border-radius:5px;padding:6px 10px;margin-bottom:4px;font-size:11.5px;color:#1A1A2E;">Landing Page art direction</div>
           <div style="background:#F0F2F8;border-radius:5px;padding:6px 10px;margin-bottom:4px;font-size:11.5px;color:#1A1A2E;">Social content posts (200/năm)</div>
           <div style="background:#FEF0F0;border-radius:5px;padding:6px 10px;font-size:11.5px;color:#C41E24;font-weight:600;display:flex;justify-content:space-between;align-items:center;"><span>🎯 CFP (Creative for Performance)</span><span style="font-size:11px;">ongoing</span></div>
@@ -4395,11 +3673,11 @@ document.addEventListener('DOMContentLoaded', renderWorkplanTable);
           <div style="font-size:10.5px;color:rgba(255,255,255,.85);margin-top:3px;">Mid-Lower Funnel</div>
         </div>
         <div style="padding:10px 12px 12px;">
-          <div style="background:#F0F2F8;border-radius:5px;padding:6px 10px;margin-bottom:4px;font-size:11.5px;color:#1A1A2E;display:flex;justify-content:space-between;align-items:center;"><span>Call Center (Lead → Pre.Lead)</span><span style="font-size:11px;font-weight:700;color:#1A2570;">xxx</span></div>
+          <div style="background:#F0F2F8;border-radius:5px;padding:6px 10px;margin-bottom:4px;font-size:11.5px;color:#1A1A2E;display:flex;justify-content:space-between;align-items:center;"><span>Call Center (Lead → Pre.Lead)</span><span style="font-size:11px;font-weight:700;color:#1A2570;">528M</span></div>
           <div style="background:#F0F2F8;border-radius:5px;padding:6px 10px;margin-bottom:4px;font-size:11.5px;color:#1A1A2E;">ZNS/SMS automation &amp; nurturing</div>
-          <div style="background:#F0F2F8;border-radius:5px;padding:6px 10px;margin-bottom:4px;font-size:11.5px;color:#1A1A2E;display:flex;justify-content:space-between;align-items:center;"><span>Social Management (5 platforms)</span><span style="font-size:11px;font-weight:700;color:#1A2570;">xxx</span></div>
+          <div style="background:#F0F2F8;border-radius:5px;padding:6px 10px;margin-bottom:4px;font-size:11.5px;color:#1A1A2E;display:flex;justify-content:space-between;align-items:center;"><span>Social Management (5 platforms)</span><span style="font-size:11px;font-weight:700;color:#1A2570;">300M</span></div>
           <div style="background:#F0F2F8;border-radius:5px;padding:6px 10px;margin-bottom:4px;font-size:11.5px;color:#1A1A2E;">Lead Scoring &amp; Segmentation</div>
-          <div style="background:#F0F2F8;border-radius:5px;padding:6px 10px;font-size:11.5px;color:#1A1A2E;display:flex;justify-content:space-between;align-items:center;"><span>Planning &amp; Reporting (12 tháng)</span><span style="font-size:11px;font-weight:700;color:#1A2570;">xxx</span></div>
+          <div style="background:#F0F2F8;border-radius:5px;padding:6px 10px;font-size:11.5px;color:#1A1A2E;display:flex;justify-content:space-between;align-items:center;"><span>Planning &amp; Reporting (12 tháng)</span><span style="font-size:11px;font-weight:700;color:#1A2570;">576M</span></div>
         </div>
       </div>
     </div>
@@ -4420,19 +3698,19 @@ document.addEventListener('DOMContentLoaded', renderWorkplanTable);
 
   <!-- Total budget summary bar -->
   <div style="background:#F8F9FA;border:1px solid #E2E5EA;border-radius:10px;padding:12px 20px;margin-bottom:24px;display:flex;align-items:center;gap:24px;flex-wrap:wrap;font-size:12.5px;">
-    <div><span style="color:#9EA3AF;">Total Budget (excl. VAT):</span> <strong style="color:#1A2570;font-size:14px;">xxx VND</strong></div>
+    <div><span style="color:#9EA3AF;">Total Budget (excl. VAT):</span> <strong style="color:#1A2570;font-size:14px;">27.15B VND</strong></div>
     <div style="width:1px;height:24px;background:#E2E5EA;"></div>
-    <div><span style="color:#9EA3AF;">Branding:</span> <strong style="color:#1A2570;">xxx</strong></div>
-    <div><span style="color:#9EA3AF;">Performance Media:</span> <strong style="color:#C41E24;">xxx</strong></div>
-    <div><span style="color:#9EA3AF;">Creative:</span> <strong style="color:#C41E24;">xxx</strong></div>
-    <div><span style="color:#9EA3AF;">Others:</span> <strong style="color:#E85C0D;">xxx</strong></div>
+    <div><span style="color:#9EA3AF;">Branding:</span> <strong style="color:#1A2570;">6.75B</strong></div>
+    <div><span style="color:#9EA3AF;">Performance Media:</span> <strong style="color:#C41E24;">16.05B</strong></div>
+    <div><span style="color:#9EA3AF;">Creative:</span> <strong style="color:#C41E24;">3.1B</strong></div>
+    <div><span style="color:#9EA3AF;">Others:</span> <strong style="color:#E85C0D;">1.4B</strong></div>
     <div style="margin-left:auto;font-size:11px;color:#9EA3AF;">Source: 04_01_02 Final Quotation (External) — 8S Working File</div>
   </div>
 
     <!-- Problem Statement -->
   <div class="sec"><h2>⚡ Problem Statement</h2><div class="line"></div></div>
   <div style="background:#FFF0F0;border-left:4px solid #B11116;border-radius:8px;padding:16px 20px;margin-bottom:20px;font-size:13px;color:#1A1A2E;line-height:1.7;">
-    <strong>Core brief:</strong> Đề xuất một chiến lược tổng thể giúp VAS đạt được <strong>xxx Qualified Lead (in school year)</strong>, tối thiểu <strong>xxx NE (SY 26–27)</strong>, đồng thời duy trì <strong>GP của PMAX ≥ xxx</strong> trong SY 26–27.
+    <strong>Core brief:</strong> Đề xuất một chiến lược tổng thể giúp VAS đạt được <strong>3,000 Qualified Lead (in school year)</strong>, tối thiểu <strong>772 NE (SY 26–27)</strong>, đồng thời duy trì <strong>GP của PMAX ≥ 9B</strong> trong SY 26–27.
   </div>
   <div class="info-grid g2" style="margin-bottom:20px;">
     <div class="info-card">
